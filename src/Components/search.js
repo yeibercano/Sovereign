@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import { hashHistory } from 'react-router';
 var axios = require('axios');
 
-
 class Search extends Component{
 
   constructor(props){
