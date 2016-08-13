@@ -10,7 +10,6 @@ var crypto = require('crypto');
 
 // CREATES NEW USERS
 router.post('/register', function(req, res, next){
-  console.log("What is req.body inside users.js: ", req.body);
   var submittedPassword = req.body.password;
   
   //hashes and salts the password
@@ -88,7 +87,6 @@ router.get('/all', function(req, res, next) {
     query: query
   }, function(err, users){
     if (err) throw err;
-    // console.log(users)
     res.send({users: users});  
   });
 });
@@ -214,11 +212,9 @@ router.get('/all', function(req, res, next) {
   });
 });
 
-
 /* QUERY SINGLE USER */
 router.get('/single', function(req, res, next) {
   var userName = req.query['userName'] || req.headers['userName'] || req.body['userName'] || req.decoded['userName'];
-  console.log('This is userName', userName);
   var query = [
     'MATCH (user:User { userName: {userName} })',
     'RETURN user'
