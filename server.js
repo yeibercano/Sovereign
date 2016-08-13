@@ -1,7 +1,7 @@
 var express = require('express');
 var path = require('path');
 var httpProxy = require('http-proxy');
-var publicPath = path.resolve(__dirname, 'public');
+var publicPath = path.resolve(__dirname, 'src');
 var fs = require('fs');
 var bodyParser = require('body-parser');
 var multiparty = require('connect-multiparty'),
