@@ -41,40 +41,31 @@ class Login extends React.Component {
     
 
 
-    _userLogin(e){
-      e.preventDefault();
-      // console.log("You made it into _userLogin");
-
-      let userLogin = {
-        userName: this.userName.value,
-        password: this.password.value
-      }
-
-    // console.log('userLogin',userLogin)
-    axios.post('/users/login',userLogin )
-      .then(function(response){
-        // console.log('response from server',response);
-        // console.log('response after login:', response.data.status)
-        if(response.data.status === 401) {
-          alert('wrong password')
-        }
-        localStorage.setItem('user', JSON.stringify(response.data))
-      }).then(function() {
-          alert('working password')
-        
-        hashHistory.push('home')
-
-      }).catch(function(err){
-        if (err ) throw err
-      })
+  _userLogin(e){
+    e.preventDefault();
+    let userLogin = {
+      userName: this.userName.value,
+      password: this.password.value
     }
+
+  axios.post('/users/login',userLogin )
+    .then(function(response){
+      if(response.data.status === 401) {
+        alert('wrong password')
+      }
+      localStorage.setItem('user', JSON.stringify(response.data))
+    }).then(function() {
+      hashHistory.push('home')
+    }).catch(function(err){
+      if (err ) throw err
+    })
+  }
 
 
     render () {
       return(
       <div>
         <form onSubmit={this._userLogin} >
-
           <input
             type="text"
             name="userName"
