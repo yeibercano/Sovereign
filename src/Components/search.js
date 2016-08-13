@@ -7,9 +7,8 @@ class Search extends Component{
 
   constructor(props){
     super (props);
-    let searchResults = localStorage.getItem('searchResults');
-    searchResults = JSON.parse(searchResults);
-    // console.log('this is searchResults:', searchResults)
+      let searchResults = localStorage.getItem('searchResults');
+      searchResults = JSON.parse(searchResults);
     this.state = {
       sResults: searchResults 
     }
