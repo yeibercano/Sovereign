@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Load from 'react-loading';
 var secret = require("../../../private.js");
 var axios = require('axios');
-import { hashHistory } from 'react-router';
+import { browserHistory, hashHistory } from 'react-router';
 
 class LandingPageVideoList extends Component {
   constructor(props){
@@ -20,25 +20,21 @@ class LandingPageVideoList extends Component {
   }
 
   movieInfo(movieInfo) {
-   if (movieInfo.rating > 2) {
-       if (movieInfo.rating < 15) {
-         return (
-       <section key={movieInfo.image} onClick={(movieSelected) => this.movieSelected(movieInfo)} className="landing_page_movieInfo">
-         <a href={(movieSelected) => this.movieSelected(movieInfo)}>
-           <img id="landing_page_movieInfo_image"src={movieInfo.image} /> 
-         </a>
-       </section>
-     )
-       }
-     
+    if (movieInfo.rating > 2) {
+      if (movieInfo.rating < 15) {
+        return (
+          <section key={movieInfo.image} onClick={(movieSelected) => this.movieSelected(movieInfo)} className="landing_page_movieInfo">
+            <a href={(movieSelected) => this.movieSelected(movieInfo)}>
+              <img id="landing_page_movieInfo_image"src={movieInfo.image} /> 
+            </a>
+          </section>
+        );
+      }  
    }
- }
+  }
 
   render() {
-
-    if (this.props.allMovies === null) {
-      return <Load />
-    }
+    if (this.props.allMovies === null) return <Load />
 
     return (
       <div>
@@ -49,6 +45,7 @@ class LandingPageVideoList extends Component {
       </div>
     );
   }
+  
 }
 
 export default LandingPageVideoList
