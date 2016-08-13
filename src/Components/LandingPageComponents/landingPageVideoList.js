@@ -39,13 +39,13 @@ class LandingPageVideoList extends Component {
     return (
       <div>
         <h2>Featured Movies</h2>
-      <section className="landing_page">
-        {this.props.allMovies.map(movie => this.movieInfo(movie.m.properties))}
-      </section>
+        <section className="landing_page">
+          {this.props.allMovies.map(movie => this.movieInfo(movie.m.properties))}
+        </section>
       </div>
     );
   }
-  
+
 }
 
 export default LandingPageVideoList
