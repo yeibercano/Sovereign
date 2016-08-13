@@ -4,6 +4,7 @@ import { Router, Route, IndexRoute, hashHistory, browserHistory } from 'react-ro
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
+import createLogger from 'redux-logger'
 
 import LandingPage from './src/Components/LandingPageComponents/landingPage'
 import Viewer from './src/Components/ViewingComponent/viewing'
@@ -16,12 +17,13 @@ import Search from './src/Components/search'
 import App from './src/Components/app'
 import reducers from './src/reducers/index'
 
-const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
+const logger = createLogger();
+const createStoreWithMiddleware = applyMiddleware(reduxThunk, logger)(createStore);
 const store = createStoreWithMiddleware(reducers);
 
 render(
   <Provider store={store}>
-    <Router history={browserHistory}>
+    <Router history={hashHistory}>
       <Route path="/" component={App}>
         <IndexRoute component={LandingPage} />
         <Route path="home" component={LandingPage}/>
