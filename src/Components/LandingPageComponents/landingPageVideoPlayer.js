@@ -36,14 +36,13 @@ class LandingPageVideoPlayer extends Component {
     localStorage.setItem('viewerMovie', JSON.stringify(movieProps));
     this.setState({ movieSent: movieProps}, function() {
       hashHistory.push('viewer')     
-    })
+    });
   }
 
   renderImage(movieProps) {
-    console.log('movieProps', movieProps)
     if (movieProps.rating > 15) {
       return (
-        <CarouselItem   onMouseEnter={this.onMouseOverHandler}>
+        <CarouselItem  key={movieProps.image} onMouseEnter={this.onMouseOverHandler}>
           <img id="play_img" src="../../../style/assets/play-btn.png" onMouseLeave={this.onMouseLeaveHandler} onClick={e => this.onClickHandler(e, movieProps)} />
           <img id="carousel-img" onClick={e => this.onClickHandler(e, movieProps)} src={movieProps.image}/>
             <Carousel.Caption id="carousel-caption">
@@ -57,7 +56,6 @@ class LandingPageVideoPlayer extends Component {
 
   render() {
     const { allMovies } = this.props;
-    console.log('allmovies', allMovies)
     if (allMovies === null) {
       return ( <div>Loading...</div> );
     }
