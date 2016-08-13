@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import { default as Video, Controls, Play, Mute, Seek, Fullscreen, Time, Overlay } from 'react-html5video';
 import {Carousel, CarouselItem, CarouselCaption} from 'react-bootstrap'
 import { hashHistory } from 'react-router'
@@ -10,7 +10,7 @@ var axios = require('axios');
 
 //retrieve the videos from the user and display them 
 // when clicked, they play in the ProfilePlayer
-class LandingPageVideoPlayer extends React.Component {
+class LandingPageVideoPlayer extends Component {
 
   constructor (props) {
     
@@ -35,14 +35,15 @@ class LandingPageVideoPlayer extends React.Component {
     e.preventDefault();
     localStorage.setItem('viewerMovie', JSON.stringify(movieProps));
     this.setState({ movieSent: movieProps}, function() {
-        hashHistory.push('viewer')     
+      hashHistory.push('viewer')     
     })
   }
 
   renderImage(movieProps) {
+    console.log('movieProps', movieProps)
     if (movieProps.rating > 15) {
       return (
-        <CarouselItem  onMouseEnter={this.onMouseOverHandler}>
+        <CarouselItem   onMouseEnter={this.onMouseOverHandler}>
           <img id="play_img" src="../../../style/assets/play-btn.png" onMouseLeave={this.onMouseLeaveHandler} onClick={e => this.onClickHandler(e, movieProps)} />
           <img id="carousel-img" onClick={e => this.onClickHandler(e, movieProps)} src={movieProps.image}/>
             <Carousel.Caption id="carousel-caption">
@@ -55,7 +56,9 @@ class LandingPageVideoPlayer extends React.Component {
   }
 
   render() {
-    if (this.props.allMovies === null) {
+    const { allMovies } = this.props;
+
+    if (allMovies === null) {
       return (
         <div>Loading...</div>
       );
@@ -64,7 +67,7 @@ class LandingPageVideoPlayer extends React.Component {
     return (
       <section className="carousel-div">
         <Carousel >
-          {this.props.allMovies.map( movie => this.renderImage(movie.m.properties))}
+          { allMovies.map( movie => this.renderImage(movie.m.properties))}
         </Carousel>
         <section style={{display: "none"}}>
         <ViewingPage movieSent={this.state.movieSent} />
