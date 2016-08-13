@@ -2,3 +2,4 @@ node_modules
 private.js
 thesis.sublime-workspace
 public
+npm-debug.log
