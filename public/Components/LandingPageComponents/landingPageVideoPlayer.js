@@ -57,11 +57,9 @@ class LandingPageVideoPlayer extends Component {
 
   render() {
     const { allMovies } = this.props;
-
+    console.log('allmovies', allMovies)
     if (allMovies === null) {
-      return (
-        <div>Loading...</div>
-      );
+      return ( <div>Loading...</div> );
     }
 
     return (
