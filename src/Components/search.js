@@ -27,7 +27,7 @@ class Search extends Component{
 
   displayResult(result) {
     return (
-      <section onClick={(movieSelected) => this.movieSelected(result)} className="searchResults">
+      <section key={result.title} onClick={(movieSelected) => this.movieSelected(result)} className="searchResults">
         <section className="search-item-title-container" >
           <h3 id="search_title">{result.title}</h3>
         </section>
