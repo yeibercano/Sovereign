@@ -7,16 +7,17 @@ import axios from 'axios';
 class Brand extends Component {
 
   selectedItem(item) {
-    axios.get('/movies/categories', {params: {target: item.target.value}})
+    console.log('item.target', item)
+    axios.get('/movies/categories', {params: {target: item}})
     .then(data => {
-        localStorage.setItem('searchResults', JSON.stringify(data.data));
-      })
+      localStorage.setItem('searchResults', JSON.stringify(data.data));
+    })
     .then(function() {
-    hashHistory.push('/search');
+      hashHistory.push('search');
     })
     .catch(function(err) {
       if (err) throw err
-    })
+    });
   }
  
   render() {
@@ -29,15 +30,15 @@ class Brand extends Component {
             categories
           </button>
           <div className="dropdown-content">
-            <a value="action" onClick={(value)=> this.selectedItem(value)}>action</a>
-            <a value="adventure" onClick={(value)=> this.selectedItem(value)}>adventure</a>
-            <a value="comedy" onClick={(value)=> this.selectedItem(value)}>comedy</a>
-            <a value="drama" onClick={(value)=> this.selectedItem(value)}>drama</a>
-            <a value="dark humor" onClick={(value)=> this.selectedItem(value)}>dark humor</a>
+            <a value="action" onClick={(value)=> this.selectedItem('action')}>action</a>
+            <a value="adventure" onClick={(value)=> this.selectedItem('adventure')}>adventure</a>
+            <a value="comedy" onClick={(value)=> this.selectedItem('comedy')}>comedy</a>
+            <a value="drama" onClick={(value)=> this.selectedItem('drama')}>drama</a>
+            <a value="dark humor" onClick={(value)=> this.selectedItem('dark humor')}>dark humor</a>
           </div>
-       </div>
+        </div>
       </nav>
-    )
+    );
   }
 }
 
