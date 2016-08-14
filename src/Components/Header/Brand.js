@@ -1,23 +1,14 @@
 import React, { Component } from 'react';
 import { hashHistory } from 'react-router';
 import axios from 'axios';
-
+import { connect } from 'react-redux'
+import { getCategory } from '../../actions/types'
 
 //this component is for the Logo/Brand
 class Brand extends Component {
 
   selectedItem(item) {
-    console.log('item.target', item)
-    axios.get('/movies/categories', {params: {target: item}})
-    .then(data => {
-      localStorage.setItem('searchResults', JSON.stringify(data.data));
-    })
-    .then(function() {
-      hashHistory.push('search');
-    })
-    .catch(function(err) {
-      if (err) throw err
-    });
+   this.props.getCategory(item);
   }
  
   render() {
@@ -42,5 +33,6 @@ class Brand extends Component {
   }
 }
 
-export default Brand
+
+export default connect(null, { getCategory })(Brand)
 
