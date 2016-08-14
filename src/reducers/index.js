@@ -1,9 +1,11 @@
-import { RECEIVE_MOVIES } from '../actions/types'
+import { combineReducers } from 'redux'
+import { category } from './receive_category_reducer'
+import { movies } from './receive_movies_reducer'
 
-export default function(state ={allMovies:[]}, action) {
-	switch (action.type) {
-		case RECEIVE_MOVIES:
-			return { ...state, allMovies: action.payload }
-	}
-	return state;
-};
+
+ const reducers = combineReducers({
+ 	category,
+ 	movies,
+ })
+
+export default reducers;
