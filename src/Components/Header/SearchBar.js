@@ -30,7 +30,6 @@ class SearchBar extends Component {
  
   render() {
     return (
-
       <aside className="searchBar"> 
         <div>
           <input className="inputSearch" onKeyDown={event => this.searchTerm(event.target.value)} onChange={event => this.searchTerm(event.target.value)} />
@@ -39,10 +38,10 @@ class SearchBar extends Component {
             type="submit"
             className="search_button">
             <img id="search_button_img" src="../../style/assets/search-icon-hi.png" />
-            </button>
+          </button>
         </div>  
       </aside>
-    )
+    );
   }
 }
 
