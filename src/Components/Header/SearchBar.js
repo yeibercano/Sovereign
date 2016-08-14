@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {hashHistory} from 'react-router';
 
-//this component is for the Logo/Brand
 class SearchBar extends Component {
 
   searchTerm (e) {
@@ -11,21 +10,22 @@ class SearchBar extends Component {
   }
 
   submitSearch (e) {
-     if (e.charCode == 13) {
-        alert('Enter... (KeyPress, use charCode)');
+    if (e.charCode == 13) {
+      alert('Enter... (KeyPress, use charCode)');
     }
     e.preventDefault();
     let searchedItem = localStorage.getItem('searchTerm');
+    
     axios.get('/movies/search', {params: {target: searchedItem}})
     .then(data => {
-        localStorage.setItem('searchResults', JSON.stringify(data.data));
-      })
+      localStorage.setItem('searchResults', JSON.stringify(data.data));
+    })
     .then(function() {
-    hashHistory.push('/search');
+      hashHistory.push('search');
     })
     .catch(function(err) {
       if (err) throw err
-    })
+    });
   }
  
   render() {
