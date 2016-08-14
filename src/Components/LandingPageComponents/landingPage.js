@@ -1,21 +1,15 @@
 import React, { Component } from 'react'
 import LandingPageVideoList from './landingPageVideoList'
 import LandingPageVideoPlayer from './landingPageVideoPlayer'
+import axios from 'axios'
 
-const axios = require('axios');
-
-
-
-// this is the parent component 
 class LandingPage extends Component {
 
   constructor (props) {
     super (props) 
-
     this.state = {
       allMovies: null
-    }
-    
+    }  
   }
 
   componentWillMount() {
@@ -38,7 +32,7 @@ class LandingPage extends Component {
             allMovies = {this.state.allMovies} />
         </section>
       </main>
-    )
+    );
   }
 }
 
