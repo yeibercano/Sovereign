@@ -26,7 +26,7 @@ var config = {
     loaders: [
       {
         test: /\.js$/,
-        loader: 'babel?presets[]=react,presets[]=es2015',
+        loader: 'babel?presets[]=react,presets[]=es2015','presets[]=stage-0','presets[]=stage-2',
         exclude: '/node_modules'
       },
       //This converts our .css into JS
