@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { hashHistory } from 'react-router';
 import axios from 'axios';
 import { connect } from 'react-redux'
-import { getCategory } from '../../actions/types'
+import { getCategory } from '../../actions/index'
 
 //this component is for the Logo/Brand
 class Brand extends Component {
@@ -32,7 +32,6 @@ class Brand extends Component {
     );
   }
 }
-
 
 export default connect(null, { getCategory })(Brand)
 
