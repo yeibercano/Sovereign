@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { hashHistory } from 'react-router'
 import * as types from './types'
 
 export function getMovies() {
@@ -10,9 +11,10 @@ export function getMovies() {
   }
 } 
 
-export function getCategories(category) {
+export function getCategory(category) {
+	console.log('category inside actions', category)
 	return dispatch => {
-		 axios.get('/movies/categories', {params: {target: item}})
+		 axios.get('/movies/categories', {params: {target: category}})
     .then(data => {
       localStorage.setItem('searchResults', JSON.stringify(data.data));
     })
