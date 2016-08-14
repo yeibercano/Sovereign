@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import LandingPageVideoList from './landingPageVideoList'
 import LandingPageVideoPlayer from './landingPageVideoPlayer'
 import axios from 'axios'
+import { connect } from 'react-redux';
+import { getMovies } from '../../actions/index'
 
 class LandingPage extends Component {
 
@@ -13,9 +15,10 @@ class LandingPage extends Component {
   }
 
   componentWillMount() {
-    axios.get("/movies").then(data => {
-      this.setState( { allMovies: data.data } );
-    });
+    this.props.getMovies();
+    // axios.get("/movies").then(data => {
+    //   this.setState( { allMovies: data.data } );
+    // });
   }
   
   selectedMovie(movie) {
@@ -23,17 +26,23 @@ class LandingPage extends Component {
   }
 
   render() {
+    const { allMovies } = this.props;
+
     return (
       <main> 
-        <LandingPageVideoPlayer allMovies = {this.state.allMovies} />
+        <LandingPageVideoPlayer allMovies = {allMovies} />
         <section className="videoListWrapper">
           <LandingPageVideoList 
             selectedMovie = {(selectedMovie) => this.selectedMovie(selectedMovie)}
-            allMovies = {this.state.allMovies} />
+            allMovies = {allMovies} />
         </section>
       </main>
     );
   }
 }
 
-export default LandingPage
+function mapStateToProps(state) {
+  return { allMovies: state.list }
+}
+
+export default connect(mapStateToProps, { getMovies })(LandingPage);
