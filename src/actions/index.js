@@ -12,7 +12,6 @@ export function getMovies() {
 } 
 
 export function getCategory(category) {
-	console.log('category inside actions', category)
 	return dispatch => {
 		 axios.get('/movies/categories', {params: {target: category}})
     .then(data => {
