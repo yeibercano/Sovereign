@@ -23,11 +23,9 @@ class Profile extends Component {
     //parses the info brought down (object)
     let parseMovie = JSON.parse(movieLS);
     this.state = {
-
-      userInfo: parseUser,
+      userInfo: parseUser
     }
   }
-
 
   render() {
     
@@ -40,9 +38,9 @@ class Profile extends Component {
             allMovies = {this.state.allMovies} />
           <UploadVideos />
         </section>
-          <VoteMovies />
+        <VoteMovies />
       </section>
-    )
+    );
   }
 }
 
