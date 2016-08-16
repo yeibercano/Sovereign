@@ -98,6 +98,7 @@ router.post('/rating', function(req, res, next){
 /* TODO: search through all nodes - right now it only search through categories */
 /* FOR SEACH BAR - SEARCH MOVIES IN DATABASE */
 router.get('/search', function(req, res, next) {
+  var searchTarget = req.query.target;
   var query = [
    'MATCH (m:Movie {title: {searchTarget}}) RETURN m'
   ].join('\n');
