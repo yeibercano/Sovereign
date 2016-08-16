@@ -28,16 +28,6 @@ app.use(express.static(publicPath));
 // use morgan to log requests to the console
 app.use(morgan('dev'));
 
-
-// app.use(function(req, res, next){
-// console.log('req.headers:', req.headers)
-// console.log('req.body:', req.body)
-// console.log('req.query:', req.query)
-//   next();
-// });
-
-
-
 /* ROUTES */
 var users = require('./server/routes/users');
 var movies = require('./server/routes/movies')
