@@ -1,6 +1,7 @@
 {
   "main": "server.js",
   "scripts": {
+    "build": "webpack",
     "start": "nodemon server.js",
     "postinstall": "NODE_ENV=production webpack --config ./webpack.production.config.js --progress --colors"
   },
@@ -19,6 +20,7 @@
     "connect-multiparty": "^2.0.0",
     "express": "^4.13.3",
     "history": "^2.1.2",
+    "html-webpack-plugin": "^2.22.0",
     "http-proxy": "^1.13.2",
     "jsonwebtoken": "^7.0.0",
     "morgan": "^1.7.0",
