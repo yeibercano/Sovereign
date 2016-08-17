@@ -1,7 +1,8 @@
-const path = require('path')
-const webpack =require('webpack')
+const path = require('path');
+const webpack = require('webpack');
+const validate = require('webpack-validator');
 
-module.exports = {
+const common = {
 
   //fastest rebuild and build speed
   devtool: 'eval', 
@@ -42,3 +43,5 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
   ]
 };
+
+module.exports = validate(common);
