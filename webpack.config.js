@@ -1,6 +1,10 @@
 var path = require('path')
 var webpack =require('webpack')
 
+const postcssImport = require('postcss-import'),
+      precss = require('precss'),
+      cssnext = require('postcss-cssnext');
+
 module.exports = {
 
   //fastest rebuild and build speed
@@ -32,9 +36,18 @@ module.exports = {
       //This converts our .css into JS
       {
         test: /\.css$/,
-        loader: 'css-loader'
+        loader: 'css-loader!postcss-loader'
       }
     ]
+  },
+  postcss: function (webpack) {
+    return [ 
+      postcssImport({
+        addDependencyTo: webpack
+      }),
+      precss,
+      cssnext
+    ];
   },
   //Since we're running Webpack from our server, need to manually add the
   //Hot Replacement plugin
