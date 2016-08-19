@@ -31,7 +31,6 @@ class SearchBar extends Component {
         <div>
           <form>
             <input className="inputSearch" placeholder="ex: movie title"
-                   onKeyDown={event => this.searchTerm(event.target.value)} 
                    onChange={event => this.searchTerm(event.target.value)} />
             <button 
               onClick= {this.submitSearch}
