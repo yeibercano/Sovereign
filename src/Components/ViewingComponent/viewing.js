@@ -22,10 +22,7 @@ class ViewingPage extends Component {
         videoActors: movieSelected.actors,
         videoDirector: movieSelected.director,
         videoYear: movieSelected.year
-
-
       }
-      // console.log('this is now the new state:', this.state.videoUrl);
     }
   }
  
