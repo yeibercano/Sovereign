@@ -32,7 +32,9 @@ class SearchBar extends Component {
     return (
       <aside className="searchBar"> 
         <div>
-          <input className="inputSearch" onKeyDown={event => this.searchTerm(event.target.value)} onChange={event => this.searchTerm(event.target.value)} />
+          <input className="inputSearch" placeholder="ex: movie title"
+                 onKeyDown={event => this.searchTerm(event.target.value)} 
+                 onChange={event => this.searchTerm(event.target.value)} />
           <button 
             onClick= {this.submitSearch}
             type="submit"
