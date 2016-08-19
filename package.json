@@ -1,6 +1,7 @@
 {
   "main": "server.js",
   "scripts": {
+    "dev": "webpack-dev-server",
     "build": "webpack",
     "start": "nodemon server.js",
     "postinstall": "NODE_ENV=production webpack --config ./webpack.production.config.js --progress --colors"
