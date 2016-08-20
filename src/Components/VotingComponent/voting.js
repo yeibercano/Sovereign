@@ -18,7 +18,7 @@ class VotingComponent extends Component {
 
   renderImage(movie){
     return (
-      <section className="voting_image_container">
+      <section key={movie.title} className="voting_image_container">
         <img id="voting_image" src={movie.image} />
         <h4>{movie.synopsis}</h4>
       </section>
