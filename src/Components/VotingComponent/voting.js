@@ -1,34 +1,31 @@
-import React, {Component} from 'react'
-var axios = require('axios');
+import React, { Component } from 'react';
+import axios from 'axios';
 
-class VotingComponent extends React.Component {
+class VotingComponent extends Component {
 
   constructor (props) {
     super (props)  
     this.state = {
       allMovies: null
     }
-   }
+  }
 
   componentWillMount() {
     axios.get("/movies").then(data => {
-      // console.log("This is data.data inside of VotingComponent", data.data)
       this.setState({ allMovies: data.data });
     });
   }
 
   renderImage(movie){
-    // console.log("This is movie inside of renderImage",movie);
     return (
-        <section className="voting_image_container">
-          <img id="voting_image" src={movie.image} />
-          <h4>{movie.synopsis}</h4>
-        </section>
-      )
+      <section className="voting_image_container">
+        <img id="voting_image" src={movie.image} />
+        <h4>{movie.synopsis}</h4>
+      </section>
+    )
   }
-
+  
   selectedMovie (movie) {
-    // console.log('A new movie was selected!', movie.video);
     this.setState({url: movie.video})
   }
 
