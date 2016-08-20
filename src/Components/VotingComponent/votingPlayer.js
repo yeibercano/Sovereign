@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class VoteVideoPlayer extends React.Component {
+class VoteVideoPlayer extends Component {
   constructor (props) {
     super (props) 
   }
@@ -20,7 +20,10 @@ class VoteVideoPlayer extends React.Component {
   render() {
     return (
       <section className="voting_player_container">
-        <video autoPlay controls src={this.props.movie} id="myVideo" type="video/mp4" onEnded={e=> this.movieEnded(e, this.props.title)} />
+        <video 
+          autoPlay controls src={this.props.movie} 
+          id="myVideo" type="video/mp4" 
+          onEnded={e=> this.movieEnded(e, this.props.title)} />
       </section>
     );
   }
