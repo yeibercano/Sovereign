@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-var axios = require('axios');
+import axios from 'axios'
 
 //import child components of profile
 import ProfileVideoPlayer from './profileVideoPlayer'
