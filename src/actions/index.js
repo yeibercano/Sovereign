@@ -2,7 +2,7 @@ import axios from 'axios';
 import { hashHistory } from 'react-router'
 import * as types from './types'
 
-export function getMovies() {
+export const getMovies = () => {
 	return dispatch => {
     axios.get('/movies')
     .then( response => { 
@@ -11,7 +11,7 @@ export function getMovies() {
   }
 } 
 
-export function getCategory(category) {
+export const getCategory = (category)  => {
 	return dispatch => {
 		 axios.get('/movies/categories', {params: {target: category}})
     .then(data => {
