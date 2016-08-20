@@ -1,9 +1,8 @@
 import React, {Component} from 'react'
 import ProfileVideoList from './profileVideoList'
-var secret = require("../../../private.js")
-var axios = require('axios');
+import axios from 'axios'
 
-class ProfileVideoPlayer extends React.Component {
+class ProfileVideoPlayer extends Component {
   constructor (props) {
     super (props)  
     this.state = {
