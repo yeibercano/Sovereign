@@ -13,7 +13,7 @@ export const getMovies = () => {
 
 export const getCategory = (category)  => {
 	return dispatch => {
-		 axios.get('/movies/categories', {params: {target: category}})
+		axios.get('/movies/categories', {params: {target: category}})
     .then(data => {
       localStorage.setItem('searchResults', JSON.stringify(data.data));
     })
@@ -24,5 +24,20 @@ export const getCategory = (category)  => {
       if (err) throw err
     });
 	}
+}
+
+export const userLastMovie = (username) => {
+
+  return dispatch => {
+    axios.get("/movies/user", {params: {userName: username }})
+    .then(response => {
+      console.log('response', response)
+      dispatch({ type: types.USER_LAST_MOVIE, payload:response.data})
+      // this.setState({ url: response.data[data.data.length-1].m.properties.video, allMovies: response.data });
+    })
+    .catch(function(err){
+      if (err) throw err
+    });
+  }
 }
 
