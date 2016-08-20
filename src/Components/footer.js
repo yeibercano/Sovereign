@@ -3,9 +3,10 @@ import React, { Component } from 'react'
 class Footer extends Component {
  
   render() {
+  	const date = new Date().getFullYear();
     return (
       <footer className="footerBackground"> 
-        <h3>Sovereign &copy; 2016</h3>
+        <h3>Sovereign &copy; { date }</h3>
       </footer>
     );
   }
