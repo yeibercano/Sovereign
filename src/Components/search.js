@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { hashHistory } from 'react-router';
-var axios = require('axios');
+import axios from 'axios'
 
 class Search extends Component{
 
@@ -48,7 +48,7 @@ class Search extends Component{
         <section className="result_header">
           <h1>Results For Your Search: </h1>
         </section>
-          {this.state.sResults.map(result=> this.displayResult(result.m.properties))}
+        {this.state.sResults.map(result=> this.displayResult(result.m.properties))}
       </section>
     );
   }

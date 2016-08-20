@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-var axios = require('axios');
+import axios from 'axios'
 
 // this is the parent component 
 class ViewingPage extends Component {
