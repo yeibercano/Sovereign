@@ -1,36 +1,29 @@
-import React from 'react';
-import ReactStars from 'react-stars'
-import { hashHistory } from 'react-router'
-var axios = require('axios');
+import React, { Component } from 'react';
+import ReactStars from 'react-stars';
+import { hashHistory } from 'react-router';
+import axios from 'axios';
  
-class Rating extends React.Component {
+class Rating extends Component {
   constructor() {
-      super();
-      let movieSelected = localStorage.getItem('viewerMovie')
-      movieSelected = JSON.parse(movieSelected);
-      let user = localStorage.getItem('user')
-      user = JSON.parse(user);
+    super();
+    let movieSelected = localStorage.getItem('viewerMovie')
+    movieSelected = JSON.parse(movieSelected);
+    let user = localStorage.getItem('user')
+    user = JSON.parse(user);
 
-      this.state = {
-          rating: 1, 
-          title: movieSelected.title, 
-          voter: user.userName
-      };
-      this.ratingChanged = this.ratingChanged.bind(this);
+    this.state = {
+      rating: 1, 
+      title: movieSelected.title, 
+      voter: user.userName
+    };
+    this.ratingChanged = this.ratingChanged.bind(this);
   }
   ratingChanged(vote) {
-      this.setState({rating: vote}, function(){   
+    this.setState({rating: vote}, function(){   
       axios.post('/movies/rating', { rating: this.state.rating, title: this.state.title, voter: this.state.voter });
       hashHistory.push("profile");
-
     });
-    // axios.post('/movies/rating', { rating: this.state.rating, title: this.state.title, voter: this.state.voter })
-    // .then(function(res){
-    //   // console.log('res', res)
-    // })
-
   }
-
 
   render() {
     const { rating } = this.state;
@@ -46,3 +39,5 @@ class Rating extends React.Component {
   }
 }
 export default Rating
+
+
