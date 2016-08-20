@@ -1,8 +1,6 @@
 import React, {Component} from 'react'
 import Gravatar from 'react-gravatar'
-var axios = require('axios');
  
-// shows ProfileInfo
 class ProfileInfo extends Component {
   
   constructor(props){
@@ -21,7 +19,7 @@ class ProfileInfo extends Component {
         <h4>{this.props.userInfo.companyName}</h4>
         <h4>{this.props.userInfo.website}</h4>
       </aside>
-    )
+    );
   }
 }
 
