@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { hashHistory } from 'react-router'
-import * as types from './types'
+import { hashHistory } from 'react-router';
+import * as types from './types';
 
 export const getMovies = () => {
 	return dispatch => {
