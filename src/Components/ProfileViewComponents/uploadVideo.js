@@ -1,14 +1,13 @@
-import React from 'react'
-var secret = require("../../../private.js")
-var axios = require('axios');
-import { Router, Redirect, Route, IndexRoute, Link, hashHistory, browserHistory} from 'react-router'
+import React, { Component } from 'react'
+import axios from 'axios'
+import { hashHistory } from 'react-router'
 
 
-const UploadVideo = React.createClass({
+class UploadVideo extends Component {
   _saveUpload(e) {
     e.preventDefault();
     hashHistory.push('NewVideo')   
-  },
+  }
   
   render() {
     return (
@@ -23,6 +22,6 @@ const UploadVideo = React.createClass({
       </section>
     );
   }
-})
+}
 
 export default UploadVideo
