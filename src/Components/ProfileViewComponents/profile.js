@@ -8,8 +8,6 @@ import UploadVideos from './uploadVideo'
 import VoteMovies from './profileVoting.js'
 import UploadNewVideo from './uploadNewVideo'
 
-
-// this is the parent component 
 // shows userInfo - ProfilePlayer - ProfileVideos - ProfileUpload
 class Profile extends Component {
 
