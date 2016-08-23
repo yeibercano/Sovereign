@@ -5,7 +5,7 @@ class Register extends Component {
  
   render() {
     return (
-      <aside class="userLogin"> 
+      <aside className="userLogin"> 
         <h1 onClick={()=> hashHistory.push('register')}>register</h1>
       </aside>
     );
