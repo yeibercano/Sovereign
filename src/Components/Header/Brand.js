@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { hashHistory } from 'react-router';
+import { hashHistory, Link } from 'react-router';
 import axios from 'axios';
 import { connect } from 'react-redux'
 import { getCategory } from '../../actions/index'
@@ -14,8 +14,9 @@ class Brand extends Component {
   render() {
     return (
       <nav className="brand"> 
-        <h1 onClick={ ()=> hashHistory.push('home')}>Sovereign
-        </h1>
+        <Link to='/home'>
+          <h1>Sovereign</h1>
+        </Link>
         <div className="dropdown menu"> 
           <button className="dropbtn dropdown menu">
             categories
