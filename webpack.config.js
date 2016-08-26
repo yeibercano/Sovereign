@@ -19,11 +19,16 @@ const common = {
     filename: 'bundle.js',
     publicPath: '/build/' //the server will listen in on this path and then proxy Webpack
   },
+  stats: {
+    colors: true,
+    reasons: true,
+    chuncks: true
+  },
 
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.jsx$/,
         loader: 'babel-loader',
         query: {
           presets: ['es2015', 'react', 'stage-0', 'stage-2']
