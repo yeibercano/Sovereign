@@ -18,9 +18,7 @@ class Brand extends Component {
           <h1>Sovereign</h1>
         </Link>
         <div className="dropdown menu"> 
-          <button className="dropbtn dropdown menu">
-            categories
-          </button>
+          <button className="dropbtn dropdown menu">categories</button>
           <div className="dropdown-content">
             <a value="action" onClick={(value)=> this.selectedItem('action')}>action</a>
             <a value="adventure" onClick={(value)=> this.selectedItem('adventure')}>adventure</a>
