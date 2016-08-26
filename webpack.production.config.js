@@ -12,6 +12,11 @@ var config = {
     path: buildPath,
     filename: 'bundle.js'
   },
+  stats: {
+    colors: true,
+    reasons: true,
+    chuncks: true
+  },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
       minimize: true,
@@ -25,7 +30,7 @@ var config = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.jsx$/,
         loader: 'babel?presets[]=react,presets[]=es2015','presets[]=stage-0','presets[]=stage-2',
         exclude: '/node_modules'
       },
