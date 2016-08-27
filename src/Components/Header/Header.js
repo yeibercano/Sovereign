@@ -25,16 +25,16 @@ class Header extends Component {
         <div className="headerWrapper">
           <Brand />
           <SearchBar />
-          <div style= {style} eventKey={2}>
+          <div style= {style} className="showBlock">
             <UserProfile />
           </div>
-          <div style={hide}>
+          <div style={hide} className="showBlock">
             <Register />
           </div>
-          <div style={hide}>
+          <div style={hide} className="showBlock">
             <UserLogin />
           </div>
-          <div style= {style}>
+          <div style= {style} className="showBlock">
             <UserLogout />
           </div>
         </div> 
