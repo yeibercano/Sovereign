@@ -17,6 +17,8 @@ const common = {
   output: {
     path: path.join(__dirname, 'public', 'build'),
     filename: 'bundle.js',
+    // filename: '[name]-[hash].js',
+    // chunkFilename: '[name]-[hash].js',
     publicPath: '/build/' //the server will listen in on this path and then proxy Webpack
   },
   stats: {
@@ -28,7 +30,7 @@ const common = {
   module: {
     loaders: [
       {
-        test: /\.jsx$/,
+        test: /\.jsx?$/,
         loader: 'babel-loader',
         query: {
           presets: ['es2015', 'react', 'stage-0', 'stage-2']

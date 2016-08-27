@@ -30,8 +30,8 @@ var config = {
   module: {
     loaders: [
       {
-        test: /\.jsx$/,
-        loader: 'babel?presets[]=react,presets[]=es2015','presets[]=stage-0','presets[]=stage-2',
+        test: /\.jsx?$/,
+        loader: 'babel?presets[]=react,presets[]=es2015',
         exclude: '/node_modules'
       },
       //This converts our .css into JS
