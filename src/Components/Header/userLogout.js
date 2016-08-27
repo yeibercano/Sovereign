@@ -11,7 +11,7 @@ class UserLogout extends Component {
  
   render() {
     return (
-      <aside class="userLogin"> 
+      <aside className="userLogin"> 
         <h1 onClick={this.logout}>logout</h1>
       </aside>
     )
