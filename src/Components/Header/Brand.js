@@ -4,11 +4,10 @@ import axios from 'axios';
 import { connect } from 'react-redux'
 import { getCategory } from '../../actions/index'
 
-//this component is for the Logo/Brand
 class Brand extends Component {
 
-  selectedItem(item) {
-   this.props.getCategory(item);
+  selectedItem(category) {
+   this.props.getCategory(category);
   }
  
   render() {
@@ -20,11 +19,11 @@ class Brand extends Component {
         <div className="dropdown menu"> 
           <button className="dropbtn dropdown menu">categories</button>
           <div className="dropdown-content">
-            <a value="action" onClick={(value)=> this.selectedItem('action')}>action</a>
-            <a value="adventure" onClick={(value)=> this.selectedItem('adventure')}>adventure</a>
-            <a value="comedy" onClick={(value)=> this.selectedItem('comedy')}>comedy</a>
-            <a value="drama" onClick={(value)=> this.selectedItem('drama')}>drama</a>
-            <a value="dark humor" onClick={(value)=> this.selectedItem('dark humor')}>dark humor</a>
+            <a value="action" onClick={ () => this.selectedItem('action')}>action</a>
+            <a value="adventure" onClick={()=> this.selectedItem('adventure')}>adventure</a>
+            <a value="comedy" onClick={()=> this.selectedItem('comedy')}>comedy</a>
+            <a value="drama" onClick={()=> this.selectedItem('drama')}>drama</a>
+            <a value="dark humor" onClick={()=> this.selectedItem('dark humor')}>dark humor</a>
           </div>
         </div>
       </nav>
