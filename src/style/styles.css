@@ -899,6 +899,8 @@ header h1 {
 /*::-webkit-input-placeholder { color: #3b3a30; } */
 
 
-
+.showBlock:hover {
+  background-color: #71A7DD;
+}
 
 
