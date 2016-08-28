@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { hashHistory } from 'react-router'
+import { connect } from 'react-redux'
+import { signIn } from '../actions/index'
+
 
 // var  local = JSON.parse(localStorage.getItem('u'))
 // let token = local.token;
@@ -26,18 +29,7 @@ class Login extends React.Component {
       userName: this.userName.value,
       password: this.password.value
     }
-
-  axios.post('/users/login',userLogin )
-    .then(function(response){
-      if(response.data.status === 401) {
-        alert('wrong password')
-      }
-      localStorage.setItem('user', JSON.stringify(response.data))
-    }).then(function() {
-      hashHistory.push('home')
-    }).catch(function(err){
-      if (err ) throw err
-    });
+    this.props.signIn(userLogin)
   }
 
   render () {
@@ -65,6 +57,6 @@ class Login extends React.Component {
   }
 }
 
-export default Login
+export default connect(null, { signIn }) (Login)
 
 
