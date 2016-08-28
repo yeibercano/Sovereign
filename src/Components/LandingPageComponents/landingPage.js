@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import LandingPageVideoList from './landingPageVideoList'
 import LandingPageVideoPlayer from './landingPageVideoPlayer'
-import axios from 'axios'
 import { connect } from 'react-redux';
 import { getMovies } from '../../actions/index'
 
@@ -16,9 +15,9 @@ class LandingPage extends Component {
 
     return (
       <main> 
-        <LandingPageVideoPlayer allMovies = {allMovies} />
+        <LandingPageVideoPlayer allMovies ={allMovies} />
         <section className="videoListWrapper">
-          <LandingPageVideoList allMovies = {allMovies} />
+          <LandingPageVideoList allMovies ={allMovies} />
         </section>
       </main>
     );
