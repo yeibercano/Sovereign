@@ -6,11 +6,11 @@ class App extends Component {
   render() {
     return (
       <section>
-      <Header />
-      <section className="wrapper">
-        {this.props.children}
-      </section>
-      <Footer />
+        <Header />
+        <section className="wrapper">
+          {this.props.children}
+        </section>
+        <Footer />
       </section>
     );
   }
