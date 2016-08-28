@@ -5,7 +5,8 @@ import { connect } from 'react-redux'
 import { signIn } from '../actions/index'
 
 class Login extends Component {
-  userLogin(){
+  userLogin(e){
+    e.preventDefault()
     this.props.signIn({
       userName: this.userName.value, 
       password: this.password.value
