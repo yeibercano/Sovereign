@@ -2,10 +2,6 @@ import React, {Component} from 'react'
 import Gravatar from 'react-gravatar'
  
 class ProfileInfo extends Component {
-  
-  constructor(props){
-    super(props)
-  }
 
   render() {
     return (
