@@ -10,13 +10,13 @@ class VotingComponent extends Component {
     }
   }
 
-  componentWillMount() {
+  componentWillMount () {
     axios.get("/movies").then(data => {
       this.setState({ allMovies: data.data });
     });
   }
 
-  renderImage(movie){
+  renderImage (movie) {
     return (
       <section key={movie.title} className="voting_image_container">
         <img id="voting_image" src={movie.image} />
@@ -30,7 +30,6 @@ class VotingComponent extends Component {
   }
 
   render() {
-
     if (this.state.allMovies === null) {
       return <div>Loading...</div>
     }
