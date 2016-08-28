@@ -41,3 +41,23 @@ export const userLastMovie = (username) => {
   }
 }
 
+export const signIn = (userLogin) => {
+  return dispatch => {
+    axios.post('/users/login',userLogin )
+      .then(function(response){
+        if(response.data.status === 401) {
+          alert('wrong password')
+        }
+        localStorage.setItem('user', JSON.stringify(response.data))
+        // localStorage.setItem('user', response.data)
+        dispatch({ type: types.SIGNIN, payload: true})
+      }).then(function() {
+        hashHistory.push('home')
+      }).catch(function(err){
+        if (err ) throw err
+      });
+  }
+}
+
+
+
