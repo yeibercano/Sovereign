@@ -7,11 +7,11 @@ class App extends Component {
     return (
       <section>
       <Header />
-        <section className="wrapper">
-          {this.props.children}
-        </section>
+      <section className="wrapper">
+        {this.props.children}
+      </section>
       <Footer />
-    </section>
+      </section>
     );
   }
 }
