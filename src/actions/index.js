@@ -47,7 +47,7 @@ export const signIn = (userLogin) => {
     .then(response => {
       localStorage.setItem('user', JSON.stringify(response.data))
       dispatch({ type: types.SIGNIN, payload: true})
-      hashHistory.push('home')
+      hashHistory.push('profile')
     })
     .catch(function(err){
       if (err ) throw err
