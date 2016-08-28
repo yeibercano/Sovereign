@@ -49,7 +49,6 @@ export const signIn = (userLogin) => {
           alert('wrong password')
         }
         localStorage.setItem('user', JSON.stringify(response.data))
-        // localStorage.setItem('user', response.data)
         dispatch({ type: types.SIGNIN, payload: true})
       }).then(function() {
         hashHistory.push('home')
