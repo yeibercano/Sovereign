@@ -13,11 +13,11 @@ class Search extends Component{
     }
   }
 
-  componentWillUpdate() {
+  componentWillReceiveProps() {
     let searchResults = localStorage.getItem('searchResults');
     searchResults = JSON.parse(searchResults);
     this.setState({sResults: searchResults})
-    return true;
+    // return true;
   }
 
   movieSelected(movieSelected) {
