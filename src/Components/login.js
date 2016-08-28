@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 import { signIn } from '../actions/index'
 
 class Login extends Component {
-
   userLogin(){
     this.props.signIn({
       userName: this.userName.value, 
@@ -16,17 +15,17 @@ class Login extends Component {
   render () {
     return(
       <div>
-        <form onSubmit={this.userLogin.bind(this)} >
+        <form onSubmit={this.userLogin.bind(this)}>
           <input
             type="text"
             name="userName"
-            ref={input=> this.userName = input} 
-            placeholder ="Enter Username"/>
+            ref={input => this.userName = input} 
+            placeholder="Enter Username" />
           <input
             type="password" 
             name="password"
-            placeholder ="Enter Password"
-            ref={input=> this.password = input}/>
+            placeholder="Enter Password"
+            ref={input => this.password = input} />
           <input 
             type="submit" 
             name="submit"
@@ -34,10 +33,10 @@ class Login extends Component {
             className="login-button" />
         </form>
       </div>
-    );
+    )
   }
 }
 
-export default connect(null, { signIn }) (Login)
+export default connect(null, { signIn })(Login)
 
 
