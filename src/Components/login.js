@@ -4,38 +4,19 @@ import { hashHistory } from 'react-router'
 import { connect } from 'react-redux'
 import { signIn } from '../actions/index'
 
+class Login extends Component {
 
-// var  local = JSON.parse(localStorage.getItem('u'))
-// let token = local.token;
-// axios.defaults.headers.common['Authorization'] =  token;
-// console.log('token:', token)
-class Login extends React.Component {
-
-  constructor (props) {
-    super (props)  
-      let userLS = localStorage.getItem('user');
-      //parses the info brought down (object)
-      let parseUser = JSON.parse(userLS);
-    this._userLogin = this._userLogin.bind(this);
-    this.state = {
-     user: parseUser,
-      test: ""
-    }
-   }
-    
-  _userLogin(e){
-    e.preventDefault();
-    let userLogin = {
-      userName: this.userName.value,
+  userLogin(){
+    this.props.signIn({
+      userName: this.userName.value, 
       password: this.password.value
-    }
-    this.props.signIn(userLogin)
+    })
   }
 
   render () {
     return(
       <div>
-        <form onSubmit={this._userLogin} >
+        <form onSubmit={this.userLogin.bind(this)} >
           <input
             type="text"
             name="userName"
