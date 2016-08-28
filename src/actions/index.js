@@ -14,8 +14,9 @@ export const getMovies = () => {
 export const getCategory = (category)  => {
 	return dispatch => {
 		axios.get('/movies/categories', {params: {target: category}})
-    .then(data => {
-      localStorage.setItem('searchResults', JSON.stringify(data.data));
+    .then(response => {
+      localStorage.setItem('searchResults', JSON.stringify(response.data));
+      dispatch({ type: types.RECEIVE_CATEGORY, payload: response.data})
     })
     .then(function() {
       hashHistory.push('search');
@@ -27,7 +28,6 @@ export const getCategory = (category)  => {
 }
 
 export const userLastMovie = (username) => {
-
   return dispatch => {
     axios.get("/movies/user", {params: {userName: username }})
     .then(response => {
@@ -43,20 +43,29 @@ export const userLastMovie = (username) => {
 
 export const signIn = (userLogin) => {
   return dispatch => {
-    axios.post('/users/login',userLogin )
-      .then(function(response){
-        if(response.data.status === 401) {
-          alert('wrong password')
-        }
-        localStorage.setItem('user', JSON.stringify(response.data))
-        dispatch({ type: types.SIGNIN, payload: true})
-      }).then(function() {
-        hashHistory.push('home')
-      }).catch(function(err){
-        if (err ) throw err
-      });
+    axios.post('/users/login',userLogin)
+    .then(response => {
+      localStorage.setItem('user', JSON.stringify(response.data))
+      dispatch({ type: types.SIGNIN, payload: true})
+      hashHistory.push('home')
+    })
+    .catch(function(err){
+      if (err ) throw err
+    });
   }
 }
 
-
+export const search = (target) => {
+  return dispatch => {
+    axios.get('/movies/search', {params: {target}})
+    .then(response => {
+      localStorage.setItem('searchResults', JSON.stringify(response.data));
+      dispatch({ type: types.SEARCH, payload:response.data })
+      hashHistory.push('search');
+    })
+    .catch(function(err) {
+      if (err) throw err
+    });
+  }
+}
 
