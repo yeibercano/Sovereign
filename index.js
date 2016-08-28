@@ -6,15 +6,15 @@ import { createStore, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
 import createLogger from 'redux-logger'
 
+import App from './src/Components/app'
 import LandingPage from './src/Components/LandingPageComponents/landingPage'
 import Viewer from './src/Components/ViewingComponent/viewing'
 import Voting from './src/Components/VotingComponent/voteContainer'
-import Login from './src/Components/login'
 import CreateAccountScreen from './src/Components/register'
+import Login from './src/Components/login'
 import Profile from './src/Components/ProfileViewComponents/profile'
 import UploadNewVideo from './src/Components/ProfileViewComponents/uploadNewVideo'
 import Search from './src/Components/search'
-import App from './src/Components/app'
 import reducers from './src/reducers/index'
 
 const logger = createLogger();
