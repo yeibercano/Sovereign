@@ -16,8 +16,7 @@ class SearchBar extends Component {
  
   render() {
     return (
-      <aside className="searchBar"> 
-          <form>
+          <form className="searchBar">
             <input 
               name="search" className="inputSearch" placeholder="ex: Mojave"
               onChange={event => this.searchTerm(event.target.value)} 
@@ -29,7 +28,6 @@ class SearchBar extends Component {
               <img id="search_button_img" src="../../style/assets/search-icon-hi.png" />
             </button>
           </form>
-      </aside>
     );
   }
 }
