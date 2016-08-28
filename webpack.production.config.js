@@ -15,7 +15,7 @@ var config = {
   stats: {
     colors: true,
     reasons: true,
-    chuncks: true
+    chuncks: false
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({

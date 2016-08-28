@@ -24,7 +24,7 @@ const common = {
   stats: {
     colors: true,
     reasons: true,
-    chuncks: true
+    chuncks: false
   },
 
   module: {
