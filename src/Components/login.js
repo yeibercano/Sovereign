@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import axios from 'axios'
-import { hashHistory } from 'react-router'
 import { connect } from 'react-redux'
 import { signIn } from '../actions/index'
 
