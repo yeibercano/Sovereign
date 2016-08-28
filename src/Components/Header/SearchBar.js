@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import {hashHistory} from 'react-router';
+import { search } from '../../actions/index'
+import { connect } from 'react-redux'
 
 class SearchBar extends Component {
-
   searchTerm (e) {
     let searchedItem = e;
     localStorage.setItem('searchTerm', searchedItem);
@@ -12,37 +11,28 @@ class SearchBar extends Component {
   submitSearch (e) {
     e.preventDefault();
     let searchedItem = localStorage.getItem('searchTerm');
-    
-    axios.get('/movies/search', {params: {target: searchedItem}})
-    .then(data => {
-      localStorage.setItem('searchResults', JSON.stringify(data.data));
-    })
-    .then(function() {
-      hashHistory.push('search');
-    })
-    .catch(function(err) {
-      if (err) throw err
-    });
+    this.props.search(searchedItem)
   }
  
   render() {
     return (
       <aside className="searchBar"> 
-        <div>
           <form>
-            <input className="inputSearch" placeholder="ex: movie title"
-                   onChange={event => this.searchTerm(event.target.value)} />
+            <input 
+              name="search" className="inputSearch" placeholder="ex: Mojave"
+              onChange={event => this.searchTerm(event.target.value)} 
+            />
             <button 
-              onClick= {this.submitSearch}
+              onClick= {this.submitSearch.bind(this)}
               type="submit"
               className="search_button">
               <img id="search_button_img" src="../../style/assets/search-icon-hi.png" />
             </button>
           </form>
-        </div>  
       </aside>
     );
   }
 }
 
-export default SearchBar
+export default connect(null, { search })(SearchBar)
+
