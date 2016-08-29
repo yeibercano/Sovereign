@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Load from 'react-loading';
 var secret = require("../../../private.js");
 var axios = require('axios');
@@ -23,11 +23,11 @@ class LandingPageVideoList extends Component {
     if (movieInfo.rating > 2) {
       if (movieInfo.rating < 15) {
         return (
-          <section key={movieInfo.image} onClick={(movieSelected) => this.movieSelected(movieInfo)} className="landing_page_movieInfo">
+          <article key={movieInfo.image} onClick={(movieSelected) => this.movieSelected(movieInfo)} className="landing_page_movieInfo">
             <a href={(movieSelected) => this.movieSelected(movieInfo)}>
-              <img id="landing_page_movieInfo_image"src={movieInfo.image} /> 
+              <img className="landing_page_movieInfo_image"src={movieInfo.image} /> 
             </a>
-          </section>
+          </article>
         );
       }  
    }
