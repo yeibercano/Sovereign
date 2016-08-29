@@ -20,17 +20,15 @@ class LandingPageVideoList extends Component {
   }
 
   movieInfo(movieInfo) {
-    if (movieInfo.rating > 2) {
-      if (movieInfo.rating < 15) {
-        return (
-          <article key={movieInfo.image} onClick={(movieSelected) => this.movieSelected(movieInfo)} className="landing_page_movieInfo">
-            <a href={(movieSelected) => this.movieSelected(movieInfo)}>
-              <img className="landing_page_movieInfo_image"src={movieInfo.image} /> 
-            </a>
-          </article>
-        );
-      }  
-   }
+    if (movieInfo.rating > 2 && movieInfo.rating < 15) {
+      return (
+        <article key={movieInfo.image} onClick={(movieSelected) => this.movieSelected(movieInfo)} className="landing_page_movieInfo">
+          <a href={(movieSelected) => this.movieSelected(movieInfo)}>
+            <img className="landing_page_movieInfo_image"src={movieInfo.image} /> 
+          </a>
+        </article>
+      );
+    }
   }
 
   render() {
