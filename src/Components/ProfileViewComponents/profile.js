@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 
 //import child components of profile
 import ProfileVideoPlayer from './profileVideoPlayer'
