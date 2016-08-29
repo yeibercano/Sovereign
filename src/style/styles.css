@@ -49,6 +49,9 @@ table {
   border-spacing: 0;
 }
 
+a: hover {
+  text-decoration: none !important;
+}
 
 
 /*=========================================================================================*/
@@ -347,7 +350,7 @@ section.landing_page h2{
   text-align: center;
   color: #FFFFFF;
 }
-section.landing_page_movieInfo{
+article.landing_page_movieInfo{
 /*  display: inline-block;
   margin: 50px 25px;
   margin-top: 5px;*/
@@ -359,7 +362,7 @@ section.landing_page_movieInfo{
   overflow: scroll;
 }
 
-#landing_page_movieInfo_image{
+.landing_page_movieInfo_image{
  /* height: 300px;
   width: 270px;*/
 /*  width: 100%;
