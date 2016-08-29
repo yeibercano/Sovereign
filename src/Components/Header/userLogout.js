@@ -3,8 +3,7 @@ import { hashHistory } from 'react-router'
 
 class UserLogout extends Component {
 
-  logout(e) {
-    e.preventDefault();
+  logout() {
     localStorage.removeItem("user");
     hashHistory.push('home')
   }
