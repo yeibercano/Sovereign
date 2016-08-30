@@ -707,6 +707,9 @@ header h1 {
   flex-grow: 1;
   display: flex;
 }
+nav a:hover {
+  text-decoration: none;
+}
 
 .brand h1 {
   /*font-family: 'Raleway Dots', cursive;*/
