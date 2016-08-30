@@ -1,5 +1,5 @@
-import React, {Component} from 'react'
-import {Carousel, CarouselItem, CarouselCaption} from 'react-bootstrap'
+import React, { Component } from 'react'
+import { Carousel, CarouselItem, CarouselCaption } from 'react-bootstrap'
 
 class ProfileVideoList extends Component {
  

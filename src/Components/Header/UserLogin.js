@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { hashHistory } from 'react-router'
 
-//this component is for the Logo/Brand
 class UserLogin extends Component {
  
   render() {
