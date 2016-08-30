@@ -1,7 +1,5 @@
 import React, {Component} from 'react'
 import ProfileVideoList from './profileVideoList'
-import axios from 'axios'
-
 import { connect } from 'react-redux'
 import { userLastMovie } from '../../actions' 
 
@@ -16,9 +14,6 @@ class ProfileVideoPlayer extends Component {
   componentWillMount() {
     const { userInfo } = this.props;
     this.props.userLastMovie(userInfo);
-    // axios.get("/movies/user", {params: {userName: this.props.userInfo.userName}}).then(data => {
-    //   this.setState({ url: data.data[data.data.length-1].m.properties.video, allMovies: data.data });
-    // });
   }
   selectedMovie (movie) {
     this.setState({url: movie.video})
