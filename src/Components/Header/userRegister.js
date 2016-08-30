@@ -3,10 +3,14 @@ import { hashHistory } from 'react-router'
 
 class Register extends Component {
  
+	handleRegister () {
+		hashHistory.push('register')
+	}
+
   render() {
     return (
       <aside className="userLogin"> 
-        <h1 onClick={()=> hashHistory.push('register')}>register</h1>
+        <h1 onClick={this.handleRegister}>register</h1>
       </aside>
     );
   }
