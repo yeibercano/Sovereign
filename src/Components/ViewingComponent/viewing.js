@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 
-// this is the parent component 
 class ViewingPage extends Component {
 
   constructor (props) {
