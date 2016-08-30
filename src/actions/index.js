@@ -33,7 +33,6 @@ export const userLastMovie = (username) => {
     .then(response => {
       console.log('response', response)
       dispatch({ type: types.USER_LAST_MOVIE, payload:response.data})
-      // this.setState({ url: response.data[data.data.length-1].m.properties.video, allMovies: response.data });
     })
     .catch(function(err){
       if (err) throw err
