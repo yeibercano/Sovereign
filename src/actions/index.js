@@ -31,7 +31,6 @@ export const userLastMovie = (username) => {
   return dispatch => {
     axios.get("/movies/user", {params: {userName: username }})
     .then(response => {
-      console.log('response', response)
       dispatch({ type: types.USER_LAST_MOVIE, payload:response.data})
     })
     .catch(function(err){
@@ -71,13 +70,13 @@ export const search = (target) => {
 export const register = (uInfo) => {
   return dispatch => {
     axios.post('/users/register', uInfo)
-    .then(function(response){
+    .then(response => {
       //userInfo is the response back with the very last user entered
       let userInfo = response.data;
       //sets "user" in localstorage to what is contained in userInfo
       localStorage.setItem('user', JSON.stringify(userInfo))
       // localStorage.setItem('newUser', userInfo)
-      dispatch({ type: types.REGISTER, action: response.data})
+      dispatch({ type: types.REGISTER, payload: response.data})
       hashHistory.push('profile')
     })
   }
