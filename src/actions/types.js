@@ -3,4 +3,4 @@ export const RECEIVE_MOVIES = 'RECEIVE_MOVIES',
 						 USER_LAST_MOVIE = 'USER_LAST_MOVIE',
 						 SIGNIN = 'SIGNIN',
 						 SEARCH = 'SEARCH',
-						 REGISTER = 'REGISTER;
+						 REGISTER = 'REGISTER';
