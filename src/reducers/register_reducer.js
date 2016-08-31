@@ -1,4 +1,4 @@
-import { REGISTER } from './actions/types'
+import { REGISTER } from '../actions/types'
 
 export function register(state = {newUser: []}, action) {
 	switch (action.type) {
