@@ -68,3 +68,21 @@ export const search = (target) => {
   }
 }
 
+export const register = (uInfo) => {
+  return dispatch => {
+    axios.post('/users/register', uInfo)
+    .then(function(response){
+      //userInfo is the response back with the very last user entered
+      let userInfo = response.data;
+      //sets "user" in localstorage to what is contained in userInfo
+      localStorage.setItem('user', JSON.stringify(userInfo))
+      // localStorage.setItem('newUser', userInfo)
+      dispatch({ type: types.REGISTER, action: response.data})
+      hashHistory.push('profile')
+    })
+  }
+}
+
+
+
+
