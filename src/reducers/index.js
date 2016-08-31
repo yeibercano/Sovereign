@@ -4,13 +4,16 @@ import { movies } from './receive_movies_reducer'
 import { last } from './user_last_movie_reducer'
 import { signin } from './signin_reducer'
 import { search } from './search_reducer'
+import { register } from './register_reducer'
+
 
  const reducers = combineReducers({
  	category,
  	movies,
  	last,
  	signin, 
- 	search
+ 	search,
+ 	register
  })
 
 export default reducers;
