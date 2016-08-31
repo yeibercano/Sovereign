@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
-import secret from '../../private.js'
-// import { Router, Redirect, Route, IndexRoute, Link, hashHistory, browserHistory} from 'react-router'
 import { connect } from 'react-redux'
-
+import { register } from '../actions/index'
 
 class CreateAccountScreen extends Component {
 
+  constructor (props) {
+    super (props)
+    this._saveAndContinue = this._saveAndContinue.bind(this)
+  }
   _saveAndContinue(e) {
     e.preventDefault();
-    // let filename  = this.video.value.replace("C:\\fakepath\\", "");
-    // let trueVideo  = secret.endpointLocation + '/' + secret.bucketName + '/' + filename 
     let uInfo = {
       firstName : this.firstName.value,
       lastName : this.lastName.value,
@@ -24,8 +24,6 @@ class CreateAccountScreen extends Component {
     }
     this.props.register(uInfo)
   }
-
- 
 
   render () {
     return (
