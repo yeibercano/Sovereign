@@ -39,6 +39,12 @@ export const userLastMovie = (username) => {
   }
 }
 
+export const movieSelected = (movie) {
+  return dispatch => {
+    dispatch({ type:MOVIE_SELECTED, payload: movie})
+  }
+}
+
 export const signIn = (userLogin) => {
   return dispatch => {
     axios.post('/users/login',userLogin)
