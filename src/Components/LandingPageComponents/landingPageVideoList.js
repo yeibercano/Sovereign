@@ -5,14 +5,6 @@ import { connect } from 'react-redux'
 import { movieSelected } from '../../actions/index'
 
 class LandingPageVideoList extends Component {
-  // constructor(props){
-  //   super(props)
-  //   // localStorage.setItem('viewerMovie', JSON.stringify({}));
-  //   // this.state = {
-  //   //     movieSent: null
-  //   // }
-  //   this.handleMovie = this.handleMovie.bind(this);
-  //  }
 
   handleMovie(movie) {
     this.props.movieSelected(movie)
