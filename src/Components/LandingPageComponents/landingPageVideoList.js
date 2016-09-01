@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import Load from 'react-loading';
-import { hashHistory } from 'react-router';
+import React, { Component } from 'react'
+import Load from 'react-loading'
+import { hashHistory } from 'react-router'
+import { connect } from 'react-redux'
 
 class LandingPageVideoList extends Component {
   constructor(props){
