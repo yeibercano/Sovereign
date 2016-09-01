@@ -2,27 +2,27 @@ import React, { Component } from 'react'
 import Load from 'react-loading'
 import { hashHistory } from 'react-router'
 import { connect } from 'react-redux'
+import { movieSelected } from '../../actions/index'
 
 class LandingPageVideoList extends Component {
-  constructor(props){
-    super(props)
-    localStorage.setItem('viewerMovie', JSON.stringify({}));
-    this.state = {
-        movieSent: null
-    }
-    this.movieSelected = this.movieSelected.bind(this);
-   }
+  // constructor(props){
+  //   super(props)
+  //   // localStorage.setItem('viewerMovie', JSON.stringify({}));
+  //   // this.state = {
+  //   //     movieSent: null
+  //   // }
+  //   this.handleMovie = this.handleMovie.bind(this);
+  //  }
 
-  movieSelected(movieSelected) {
-    localStorage.setItem('viewerMovie', JSON.stringify(movieSelected));
-    hashHistory.push('viewer')  
+  handleMovie(movie) {
+    this.props.movieSelected(movie)
   }
 
   movieInfo(movieInfo) {
     if (movieInfo.rating > 2 && movieInfo.rating < 15) {
       return (
-        <article key={movieInfo.image} onClick={(movieSelected) => this.movieSelected(movieInfo)} className="landing_page_movieInfo">
-          <a href={(movieSelected) => this.movieSelected(movieInfo)}>
+        <article key={movieInfo.image} onClick={() => this.handleMovie(movieInfo)} className="landing_page_movieInfo">
+          <a href={() => this.handleMovie(movieInfo)}>
             <img className="landing_page_movieInfo_image"src={movieInfo.image} /> 
           </a>
         </article>
@@ -45,6 +45,6 @@ class LandingPageVideoList extends Component {
 
 }
 
-export default LandingPageVideoList
+export default connect(null, { movieSelected })(LandingPageVideoList)
 
 
