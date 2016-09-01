@@ -39,9 +39,11 @@ export const userLastMovie = (username) => {
   }
 }
 
-export const movieSelected = (movie) {
+export const movieSelected = (movie) => {
   return dispatch => {
-    dispatch({ type:MOVIE_SELECTED, payload: movie})
+    dispatch({ type:types.MOVIE_SELECTED, payload: movie})
+    localStorage.setItem('viewerMovie', JSON.stringify(movie));
+    hashHistory.push('viewer')  
   }
 }
 
