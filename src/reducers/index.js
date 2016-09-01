@@ -5,7 +5,7 @@ import { last } from './user_last_movie_reducer'
 import { signin } from './signin_reducer'
 import { search } from './search_reducer'
 import { register } from './register_reducer'
-
+import { movieSelected } from './movie_selected_reducer'
 
  const reducers = combineReducers({
  	category,
@@ -13,7 +13,8 @@ import { register } from './register_reducer'
  	last,
  	signin, 
  	search,
- 	register
+ 	register, 
+ 	movieSelected
  })
 
 export default reducers;
