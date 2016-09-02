@@ -1,0 +1,9 @@
+#loading_bubbles{
+  position: absolute;
+  display: inline-block;
+  visibility: hidden;
+  top: 75%;
+  left: 65%;
+  height: 250px;
+  width: 250px;
+} 
