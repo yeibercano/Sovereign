@@ -1,3 +1,6 @@
+.wrapper {
+  height: 100%;
+}
 section.landing_page {
  /* width: 1200px;
   overflow: scroll;*/
@@ -37,4 +40,25 @@ article.landing_page_movieInfo{
   transform: scale(1.1);
   transition: all .2s ease-in;
   opacity: 1;
+}
+.videoListWrapper { 
+/*  width: auto;
+  margin-left: 10%;
+  margin-right: 10%;*/
+    width: 80%;
+    margin: 0 auto;
+}
+.videoListWrapper h2 { 
+ /*   text-align: center;
+    font-size: 33px;
+    padding: 20px 0px;
+    color: white;*/
+
+    text-align: center;
+    font-size: 25px;
+    padding: 20px 0px;
+    color: white;
+    font-family: raleway, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
 }
