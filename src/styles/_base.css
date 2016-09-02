@@ -1,0 +1,11 @@
+/*brand font*/
+/*@import url(https://fonts.googleapis.com/css?family=Raleway:600,900italic);*/
+/*
+@import url(https://fonts.googleapis.com/css?family=Architects+Daughter|Rock+Salt|Bubbler+One);
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700);*/
+
+body{
+  background: -webkit-radial-gradient(center, ellipse cover, #2c2e3d 0%,#000000 100%);
+  background-color: #000000;
+  font-family: 'Playfair Display', serif;
+}

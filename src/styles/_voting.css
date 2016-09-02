@@ -1,0 +1,111 @@
+section.voting_page_container {
+  height: 780px;
+}
+section.parent_voting_container {
+  border-top: 1px solid #316DAA;
+}
+section.voting_container{
+  height: 550px;
+  width: 1160px;
+  overflow: scroll;
+  position: relative;
+  margin: 50px auto;
+}
+section.voting_container h4{
+  color: #FFFFFF;
+  /*border-bottom: 1px solid #242632;*/
+  height: 275px;
+  width: 100%;
+  text-align: center;
+  padding: 20px; 
+}
+section.vote_contain {
+  margin-top: 20px;
+  margin-left: 10px;
+  border-top: 3px solid #FFFFFF;
+  padding: 40px 30px 10px 10px; 
+  height: 200px;
+}
+section.voting_container h3{
+  color: #FFFFFF;
+  text-align: center;
+  padding: 20px; 
+  font-size: 35px;
+}
+#profile_voting_list_title {
+  color: #FFFFFF;
+  padding: 20px;
+  font-size: 35px;
+  margin-top: 50px;
+  text-align: center;
+}
+.vote_title {
+  width: 100%;
+  height: 150px;
+  border-top: 3px solid #FFFFFF;
+  z-index: 1;
+}
+
+.voting_information h3 h4{
+  text-align: center;
+}
+#voting_information_viewer h2{
+  color: #FFFFFF;
+  font-size: 30px;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+#voting_information_viewer h5{
+  color: #FFFFFF;
+  font-size: 20px;
+}
+.vote_title h1 {
+  color: white;
+  text-align: center;
+}
+
+#voting_image img{
+  height: 250px;
+  margin: 40px 0px 0px 15px;
+  border: 5px solid #FFFFFF;
+  float: left;
+  margin-right: 25px;
+}
+
+#voting_image {
+  height: 200px;
+  border-radius: 10px;
+  cursor: pointer; 
+}
+#voting_image_viewer img{
+  height: 250px;
+  /*margin: 20px 0px 0px 15px;*/
+  border: 5px solid #FFFFFF;
+  float: left;
+  margin-right: 25px;
+}
+section.stars{
+  display: block;
+  margin-top: 40px;
+}
+#voting_image {
+  height: 200px;
+  border-radius: 10px;
+  opacity: .8;
+}
+#voting_image img :hover {
+  height: 200px;
+  border-radius: 10px;
+    opacity: 1;
+}
+
+section.voting_player_container {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#voting_information {
+  display: block;
+  font-size: 25px;
+  color: white;
+}

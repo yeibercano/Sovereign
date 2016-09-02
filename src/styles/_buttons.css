@@ -1,0 +1,31 @@
+.register-button{
+  height: 50px;
+  width: 325px;
+  font-size: 20px;
+  background-color: #222222;
+  color: white;
+  border-radius: none;
+}
+.login-button{
+  height: 50px;
+  width: 200px;
+  font-size: 20px;
+  background-color: #222222;
+  color: white;
+  border-radius: none;
+}
+#navbar_register_link{
+  position: absolute;
+  top:-30px;
+  right: 125px;
+}
+#navbar_login_link{
+  position: absolute;
+  top:-30px;
+  right: 50px;
+}
+#navbar_logout_link{
+  position: absolute;
+  top:-30px;
+  right: 50px;
+}
