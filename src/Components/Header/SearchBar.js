@@ -25,7 +25,7 @@ class SearchBar extends Component {
           onClick= {this.submitSearch.bind(this)}
           type="submit"
           className="search_button">
-          <img id="search_button_img" src="../../style/assets/search-icon-hi.png" />
+          <img id="search_button_img" src="../../styles/assets/search-icon-hi.png" />
         </button>
       </form>
     );
