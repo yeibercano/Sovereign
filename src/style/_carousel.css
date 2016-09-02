@@ -1,0 +1,25 @@
+section.carousel-div{
+/*  margin-top: -18px;*/
+  /*padding-bottom: 40px;*/
+      border-bottom: 5px solid #316daa;
+}
+#carousel-img{
+    margin: 0px auto;
+    width: 75%;
+}
+#carousel-caption{
+  background-color: black;
+  border-radius: 10px;
+  opacity: 0.7;
+}
+#mini_carousel{
+  height: 300px;
+  margin: 0 auto;
+}
+#play_img{
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  margin: 70px 750px;
+  visibility: hidden;
+}
