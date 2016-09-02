@@ -3,8 +3,6 @@ import { default as Video, Controls, Play, Mute, Seek, Fullscreen, Time, Overlay
 import {Carousel, CarouselItem, CarouselCaption} from 'react-bootstrap'
 import { hashHistory } from 'react-router'
 import ViewingPage from '../ViewingComponent/viewing'
-import axios from 'axios'
-import secret from '../../../private.js'
 
 //retrieve the videos from the user and display them 
 // when clicked, they play in the ProfilePlayer
