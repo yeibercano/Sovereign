@@ -6,12 +6,14 @@ import { signin } from './signin_reducer'
 import { search } from './search_reducer'
 import { register } from './register_reducer'
 import { movieSelected } from './movie_selected_reducer'
+import { reducer as form } from 'redux-form'
 
  const reducers = combineReducers({
  	category,
  	movies,
  	last,
- 	signin, 
+ 	signin,
+ 	form, 
  	search,
  	register, 
  	movieSelected
