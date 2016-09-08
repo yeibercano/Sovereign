@@ -1,11 +1,11 @@
-import { SIGNIN } from '../actions/types'
+import { SIGNED_USER } from '../actions/types'
 
-export function signin (state = { authenticated: false }, action) {
+export function signedUser (state = { signedUser: false }, action) {
 	switch (action.type) {
-	  case SIGNIN: 
+	  case SIGNED_USER: 
 	  	return { 
 	  		...state, 
-	  		authenticated: action.payload 
+	  		signedUser: action.payload 
 	  	} 
 	}
 	return state

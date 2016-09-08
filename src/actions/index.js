@@ -47,12 +47,12 @@ export const movieSelected = (movie) => {
   }
 }
 
-export const signIn = (userLogin) => {
+export const signInUser = (userLogin) => {
   return dispatch => {
     axios.post('/users/login',userLogin)
     .then(response => {
       localStorage.setItem('user', JSON.stringify(response.data))
-      dispatch({ type: types.SIGNIN, payload: response.data})
+      dispatch({ type: types.SIGNED_USER, payload: response.data})
       hashHistory.push('profile')
     })
     .catch(function(err){

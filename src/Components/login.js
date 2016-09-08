@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { reduxForm } from 'redux-form';
-import { signIn } from '../actions/index'
+import { signInUser } from '../actions/index'
 
 class Login extends Component {
   handleFormSubmit({userName, password}){
-    this.props.signIn({userName, password})
+    this.props.signInUser({userName, password})
   }
 
   render () {
@@ -28,6 +28,6 @@ class Login extends Component {
 export default reduxForm({
   form: 'signinForm',
   fields: ['userName', 'password']
-}, null, { signIn })(Login)
+}, null, { signInUser })(Login)
 
 
