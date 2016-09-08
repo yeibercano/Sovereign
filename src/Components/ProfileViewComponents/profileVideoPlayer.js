@@ -4,16 +4,9 @@ import { connect } from 'react-redux'
 import { userLastMovie } from '../../actions' 
 
 class ProfileVideoPlayer extends Component {
-  constructor (props) {
-    super (props)  
-    this.state = {
-      url: "",
-      allMovies: ""
-    }
-  }
   componentWillMount() {
     const { userInfo } = this.props;
-    this.props.userLastMovie(userInfo);
+    this.props.userLastMovie(userInfo.userName);
   }
   selectedMovie (movie) {
     this.setState({url: movie.video})
