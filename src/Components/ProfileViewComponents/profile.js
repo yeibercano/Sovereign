@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 //import child components of profile
 import ProfileVideoPlayer from './profileVideoPlayer'
@@ -10,29 +11,13 @@ import UploadNewVideo from './uploadNewVideo'
 // shows userInfo - ProfilePlayer - ProfileVideos - ProfileUpload
 class Profile extends Component {
 
-  constructor (props) {
-    super (props) 
-    //pulls info from localStorage
-    let userLS = localStorage.getItem('user');
-    //parses the info brought down (object)
-    let parseUser = JSON.parse(userLS);
-    let movieLS = localStorage.getItem('movieInfo');
-    //parses the info brought down (object)
-    let parseMovie = JSON.parse(movieLS);
-    this.state = {
-      userInfo: parseUser
-    }
-  }
-
   render() {
-    
+    const { userInfo } = this.props
     return (
       <section>
         <section className="profile_container" >
-          <ProfileInfo userInfo = {this.state.userInfo}/>
-          <ProfileVideoPlayer 
-            userInfo = {this.state.userInfo}
-            allMovies = {this.state.allMovies} />
+          <ProfileInfo userInfo = {userInfo}/>
+          <ProfileVideoPlayer userInfo = {userInfo} />
           <UploadVideos />
         </section>
         <VoteMovies />
@@ -41,5 +26,9 @@ class Profile extends Component {
   }
 }
 
-export default Profile
+function mapStateToProps(state) {
+   return { userInfo: state.signedUser.signedUser }
+}
+
+export default connect(mapStateToProps, null)(Profile)
          
