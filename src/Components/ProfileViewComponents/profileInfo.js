@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import Gravatar from 'react-gravatar'
- 
-// class ProfileInfo extends Component {
+
 const ProfileInfo = ({ userInfo}) => {
   return (
     <aside  className="account_information">
