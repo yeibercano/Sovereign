@@ -93,10 +93,7 @@ router.get('/all', function(req, res, next) {
 
 /* POST /users/login */
 router.post('/login', function(req, res, next){
-  // console.log('req.body;',req.body)
-  console.log('in login');
   var username = req.headers.userName || req.query.userName || req.body.userName
-  console.log('username:', username)
   //checking passwords
   var submittedPassword = req.headers.password || req.query.password || req.body.password;
   // var hashedPassword = bcrypt.hashSync(submittedPassword, 10);
@@ -145,8 +142,6 @@ router.post('/login', function(req, res, next){
       // }
 
       if(bcrypt.compareSync(submittedPassword, databasePass)){
-        console.log('pass works')
-
         res.send({
           firstName : user[0].user.properties.firstName,
           lastName: user[0].user.properties.lastName,
@@ -207,7 +202,6 @@ router.get('/all', function(req, res, next) {
     query: query
   }, function(err, users){
     if (err) throw err;
-    // console.log(users)
     res.send({users: users});  
   });
 });
@@ -228,8 +222,6 @@ router.get('/single', function(req, res, next) {
     params: params
   }, function(err, user){
     if (err) throw err;
-    console.log("What is user in db.cypher: ", user);
-    console.log("WORK!!!!!!!!", user[0].user.properties.userName)
     res.send(user);  
   });
 });
