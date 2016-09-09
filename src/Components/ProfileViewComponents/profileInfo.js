@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import Gravatar from 'react-gravatar'
 
-const ProfileInfo = ({ userInfo}) => {
+const ProfileInfo = ({ userInfo }) => {
   return (
     <aside  className="account_information">
       <h1 id="account_information_title" >Welcome, {userInfo.userName}!</h1>
