@@ -5,7 +5,6 @@ import { userMovies, userMoviesSelected } from '../../actions'
 
 class ProfileVideoPlayer extends Component {
   
-
   componentWillMount() {
     const { userInfo } = this.props;
     this.props.userMovies(userInfo.userName);
