@@ -1,4 +1,4 @@
-import { USER_MOVIES } from '../actions/types'
+import { USER_MOVIES, USER_MOVIES_SELECTED } from '../actions/types'
 
 export function userMovies (state = { recentMovieUrl: "", userMovies: [], recentMovie: ""}, action) {
 	switch (action.type) {
@@ -8,6 +8,10 @@ export function userMovies (state = { recentMovieUrl: "", userMovies: [], recent
 				recentMovieUrl: action.payload[0].m.properties.video,
 				recentMovie: action.payload[0], 
 				userMovies: action.payload 
+			}
+		case USER_MOVIES_SELECTED:
+			return {
+				...state, recentMovieUrl: action.payload.video
 			}
 	}
 	return state;
