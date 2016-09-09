@@ -4,9 +4,10 @@ import { Carousel, CarouselItem, CarouselCaption } from 'react-bootstrap'
 class ProfileVideoList extends Component {
  
   videoInfo(videoInfo) {
+    const { selectedMovie } = this.props
     return (
       <Carousel.Item className="list-item-container" >
-        <img id="mini_carousel" src={videoInfo.image} onClick={()=> this.props.selectedMovie(videoInfo)}/>
+        <img id="mini_carousel" src={videoInfo.image} onClick={()=> selectedMovie(videoInfo)}/>
         <Carousel.Caption>
           <h3>{videoInfo.title}</h3>
         </Carousel.Caption>
@@ -17,11 +18,12 @@ class ProfileVideoList extends Component {
     if (this.props.moviesList === '') {
       return <section id="not_upload">You have not Uploaded Any Movies...</section>
     }
+    const { moviesList } = this.props;
     return (
       <section>
         <h1 className="upload_list_title">Your Uploaded Content</h1>
         <Carousel className="profile_video_list">
-          {this.props.moviesList.map(movie => this.videoInfo(movie.m.properties))}
+          { moviesList.map(movie => this.videoInfo(movie.m.properties))}
         </Carousel>
       </section>
     );
