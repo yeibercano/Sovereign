@@ -27,11 +27,11 @@ export const getCategory = (category)  => {
 	}
 }
 
-export const userLastMovie = (username) => {
+export const userMovies = (username) => {
   return dispatch => {
     axios.get("/movies/user", {params: {userName: username }})
     .then(response => {
-      dispatch({ type: types.USER_LAST_MOVIE, payload:response.data})
+      dispatch({ type: types.USER_MOVIES, payload:response.data})
     })
     .catch(function(err){
       if (err) throw err
