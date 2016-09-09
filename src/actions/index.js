@@ -39,6 +39,12 @@ export const userMovies = (username) => {
   }
 }
 
+export const userMoviesSelected = (movie) => {
+  return dispatch => {
+    dispatch({ type: types.USER_MOVIES_SELECTED, payload: movie})
+  }
+}
+
 export const movieSelected = (movie) => {
   return dispatch => {
     dispatch({ type: types.MOVIE_SELECTED, payload: movie})
