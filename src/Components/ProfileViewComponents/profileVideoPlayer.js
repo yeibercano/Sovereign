@@ -1,18 +1,18 @@
 import React, {Component} from 'react'
 import ProfileVideoList from './profileVideoList'
 import { connect } from 'react-redux'
-import { userLastMovie } from '../../actions' 
+import { userMovies } from '../../actions' 
 
 class ProfileVideoPlayer extends Component {
   componentWillMount() {
     const { userInfo } = this.props;
-    this.props.userLastMovie(userInfo.userName);
+    this.props.userMovies(userInfo.userName);
   }
   selectedMovie (movie) {
     this.setState({url: movie.video})
   }
   render() {
-    const { allMovies, url } = this.props;
+    const { allMovies, url, recentAdded } = this.props;
     return (
       <section className="profile_video_player">
         <video controls src={url} type="video/mp4" />
@@ -26,10 +26,11 @@ class ProfileVideoPlayer extends Component {
 
 function mapStateToProps(state) {
   return { 
-    url: state.last.url, 
-    allMovies: state.last.allMovies
+    recentAdded: state.userMovies.recentMovie,
+    url: state.userMovies.recentMovieUrl, 
+    allMovies: state.userMovies.userMovies
   } 
 }
 
-export default connect(mapStateToProps, { userLastMovie })(ProfileVideoPlayer)
+export default connect(mapStateToProps, { userMovies })(ProfileVideoPlayer)
 
