@@ -23,13 +23,14 @@ class LandingPageVideoList extends Component {
   }
 
   render() {
-    if (this.props.allMovies === null) return <Load />
+    const { allMovies } = this.props;
+    if (allMovies === null) return <Load />
 
     return (
       <div>
         <h2>Featured Movies</h2>
         <section className="landing_page">
-          {this.props.allMovies.map(movie => this.movieInfo(movie.m.properties))}
+          {allMovies.map(movie => this.movieInfo(movie.m.properties))}
         </section>
       </div>
     );
