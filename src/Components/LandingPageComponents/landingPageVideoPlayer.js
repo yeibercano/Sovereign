@@ -11,12 +11,7 @@ import { movieSelected } from '../../actions/index'
 class LandingPageVideoPlayer extends Component {
 
   constructor (props) {
-    
     super (props)  
-    localStorage.setItem('viewerMovie', JSON.stringify({}));
-    this.state = {
-        movieSent: null
-    }
     this.onClickHandler = this.onClickHandler.bind(this);
   }
 
@@ -29,12 +24,10 @@ class LandingPageVideoPlayer extends Component {
   onMouseLeaveHandler() {
     document.getElementById("play_img").style.visibility = "hidden";
   }
+
   onClickHandler (e, movieProps) {
     e.preventDefault();
-    localStorage.setItem('viewerMovie', JSON.stringify(movieProps));
-    this.setState({ movieSent: movieProps}, function() {
-      hashHistory.push('viewer')     
-    });
+    this.props.movieSelected(movieProps)
   }
 
   renderImage(mov) {
@@ -55,7 +48,7 @@ class LandingPageVideoPlayer extends Component {
   }
 
   render() {
-    const { allMovies } = this.props;
+    const { allMovies, viewerMovie } = this.props;
     if (allMovies === null) {
       return ( <div>Loading...</div> );
     }
@@ -66,10 +59,16 @@ class LandingPageVideoPlayer extends Component {
           { allMovies.map( movie => this.renderImage(movie))}
         </Carousel>
         <section style={{display: "none"}}>
-        <ViewingPage movieSent={this.state.movieSent} />
+        <ViewingPage movieSent={viewerMovie} />
         </section>
       </section>
     );
+  }
+}
+
+function mapStateToProps(state) {
+  return {
+    viewerMovie: state.movieSelected.viewerMovie
   }
 }
 
