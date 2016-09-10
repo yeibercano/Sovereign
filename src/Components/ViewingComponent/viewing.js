@@ -2,29 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 class ViewingPage extends Component {
-
-  // constructor (props) {
-  //   super (props) 
-
-  //   let movieSelected = localStorage.getItem('viewerMovie')
-  //   if (movieSelected === '{}') {
-  //     this.state = {
-  //       videoUrl: null
-  //     }
-  //   } else {
-  //     movieSelected = JSON.parse(movieSelected);
-  //     this.state = {
-  //       videoUrl: movieSelected.video,
-  //       videoImage: movieSelected.image,
-  //       videoTitle: movieSelected.title,
-  //       videoSynopsis: movieSelected.synopsis,
-  //       videoActors: movieSelected.actors,
-  //       videoDirector: movieSelected.director,
-  //       videoYear: movieSelected.year
-  //     }
-  //   }
-  // }
- 
+  
   render() {
     const { selectedMovie } = this.props;
     if (selectedMovie === null) {
