@@ -5,13 +5,14 @@ import UserLogin  from './UserLogin'
 import UserLogout from './userLogout'
 import UserProfile from './userProfile'
 import Register from './userRegister'
+import { connect } from 'react-redux'
 
 //Parent component of Header
 class Header extends Component {
  
   render() {
 
-    let user = JSON.parse(localStorage.getItem('user')) || undefined;
+    let user = this.props.user || undefined;
     let style = {};
     let hide = {}
     if(user === undefined){
@@ -43,4 +44,10 @@ class Header extends Component {
   }
 }
 
-export default Header
+function mapStateToProps(state) {
+  return {
+    user: state.signedUser.signedUser
+  }
+}
+
+export default connect(mapStateToProps, null)(Header)
