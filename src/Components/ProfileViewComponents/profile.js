@@ -15,12 +15,12 @@ class Profile extends Component {
     const { userInfo } = this.props
     return (
       <section>
-        <section className="profile_container" >
-          <ProfileInfo userInfo = {userInfo}/>
+        <section className="profile_container">
+          <ProfileInfo userInfo = {userInfo} />
           <ProfileVideoPlayer userInfo = {userInfo} />
           <UploadVideos />
         </section>
-        <VoteMovies />
+        <VoteMovies userInfo = {userInfo} />
       </section>
     );
   }
