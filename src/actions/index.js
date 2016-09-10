@@ -57,7 +57,6 @@ export const signInUser = (userLogin) => {
   return dispatch => {
     axios.post('/users/login',userLogin)
     .then(response => {
-      localStorage.setItem('user', JSON.stringify(response.data))
       dispatch({ type: types.SIGNED_USER, payload: response.data})
       hashHistory.push('profile')
     })
