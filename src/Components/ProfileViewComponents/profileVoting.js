@@ -1,30 +1,32 @@
 import React, {Component} from 'react'
 import { hashHistory } from 'react-router'
+import { connect } from 'react-redux'
 var axios = require('axios');
 
 class VotingComponent extends React.Component {
 
-  constructor (props) {
-    super (props)  
-    this.state = {
-      allMovies: null
-    }
-   }
+  // constructor (props) {
+  //   super (props)  
+  //   this.state = {
+  //     allMovies: null
+  //   }
+  //  }
 
-  componentWillMount() {
-    axios.get("/movies/profile").then(data => {
-      this.setState({ allMovies: data.data });
-    });
-  }
+  // componentWillMount() {
+  //   axios.get("/movies/profile").then(data => {
+  //     this.setState({ allMovies: data.data });
+  //   });
+  // }
   onClickHandler (e, movie){
     e.preventDefault();
     localStorage.setItem('viewerMovie', JSON.stringify(movie));
     hashHistory.push("vote");
   }
 
-  renderImage(movie){
-    let currentUser = JSON.parse(localStorage.getItem('user'));
-    currentUser = currentUser.userName;
+  renderImage(movie) {
+    const { userInfo } = this.props;
+    const currentUser = userInfo.userName;
+
     if(currentUser !== movie.userName){
       if(!movie.voters.includes(currentUser)){
         return (
@@ -42,13 +44,12 @@ class VotingComponent extends React.Component {
   }
 
   selectedMovie (movie) {
-    // console.log('A new movie was selected!', movie.video);
     this.setState({url: movie.video})
   }
 
   render() {
-
-    if (this.state.allMovies === null) {
+    const { allMovies } = this.props;
+    if (allMovies === null) {
       return <div>Loading...</div>
     }
     
@@ -56,14 +57,20 @@ class VotingComponent extends React.Component {
       <section className="parent_voting_container">
       <h3 id="profile_voting_list_title">Movies to be voted on</h3>
         <section className="voting_container">
-          {this.state.allMovies.map(movie => this.renderImage(movie.m.properties))}
+          {allMovies.map(movie => this.renderImage(movie.m.properties))}
         </section>
       </section>
     );
   }
 }
 
-export default VotingComponent
+function mapStateToProps(state) {
+  return {
+    allMovies: state.movies.allMovies
+  }
+}
+
+export default connect(mapStateToProps, null)(VotingComponent)
 
             
 
