@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { default as Video, Controls, Play, Mute, Seek, Fullscreen, Time, Overlay } from 'react-html5video';
-import {Carousel, CarouselItem, CarouselCaption} from 'react-bootstrap'
+import { Carousel, CarouselItem, CarouselCaption } from 'react-bootstrap'
 import { hashHistory } from 'react-router'
 import ViewingPage from '../ViewingComponent/viewing'
+import { connect } from 'react-redux'
+import { movieSelected } from '../../actions/index'
 
 //retrieve the videos from the user and display them 
 // when clicked, they play in the ProfilePlayer
@@ -71,5 +73,5 @@ class LandingPageVideoPlayer extends Component {
   }
 }
 
-export default LandingPageVideoPlayer
+export default connect(null, { movieSelected })(LandingPageVideoPlayer)
 
