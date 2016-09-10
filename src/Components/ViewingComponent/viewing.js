@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 class ViewingPage extends Component {
 
@@ -57,4 +58,6 @@ class ViewingPage extends Component {
   }
 }
 
-export default ViewingPage
+export default connect(null, null)(ViewingPage)
+
+
