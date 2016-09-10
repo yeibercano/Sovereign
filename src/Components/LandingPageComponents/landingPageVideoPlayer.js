@@ -72,5 +72,5 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(null, { movieSelected })(LandingPageVideoPlayer)
+export default connect(mapStateToProps, { movieSelected })(LandingPageVideoPlayer)
 
