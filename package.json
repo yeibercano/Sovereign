@@ -58,5 +58,8 @@
     "webpack-dev-server": "^1.14.1",
     "webpack-hot-middleware": "^2.9.1",
     "webpack-validator": "^2.2.7"
+  },
+  "devDependencies": {
+    "randomstring": "^1.1.5"
   }
 }
