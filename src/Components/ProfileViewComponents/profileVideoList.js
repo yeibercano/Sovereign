@@ -4,9 +4,10 @@ import { Carousel, CarouselItem, CarouselCaption } from 'react-bootstrap'
 class ProfileVideoList extends Component {
  
   videoInfo(videoInfo) {
-    const { selectedMovie } = this.props
+    const { selectedMovie } = this.props;
+
     return (
-      <Carousel.Item className="list-item-container" >
+      <Carousel.Item className="list-item-container" key={videoInfo.title}>
         <img id="mini_carousel" src={videoInfo.image} onClick={()=> selectedMovie(videoInfo)}/>
         <Carousel.Caption>
           <h3>{videoInfo.title}</h3>
