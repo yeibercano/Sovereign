@@ -1,13 +1,13 @@
 import React, {Component} from 'react'
 import { hashHistory } from 'react-router'
 import { connect } from 'react-redux'
+import { movieSelected } from '../../actions/index'
 
 class VotingComponent extends React.Component {
 
   onClickHandler (e, movie){
     e.preventDefault();
-    localStorage.setItem('viewerMovie', JSON.stringify(movie));
-    hashHistory.push("vote");
+    this.props.movieSelected(movie, 'vote')
   }
 
   renderImage(movie) {
@@ -53,7 +53,7 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, null)(VotingComponent)
+export default connect(mapStateToProps, { movieSelected })(VotingComponent)
 
             
 
