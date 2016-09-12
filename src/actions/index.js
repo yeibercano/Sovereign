@@ -42,10 +42,17 @@ export const userMoviesSelected = (movie) => {
   }
 }
 
-export const movieSelected = (movie) => {
+export const movieSelected = (movie, route = 'viewer') => {
   return dispatch => {
     dispatch({ type: types.MOVIE_SELECTED, payload: movie})
-    hashHistory.push('viewer')  
+    hashHistory.push(route)  
+  }
+}
+
+export const voting = (vote) => {
+  return dispatch => {
+    axios.post('/movies/rating', vote);
+      hashHistory.push("profile");
   }
 }
 
