@@ -27,7 +27,7 @@ class Profile extends Component {
 }
 
 function mapStateToProps(state) {
-   return { userInfo: state.signedUser.signedUser }
+   return { userInfo: state.authUser.authUser }
 }
 
 export default connect(mapStateToProps, null)(Profile)
