@@ -15,10 +15,8 @@ export const getCategory = (category)  => {
 	return dispatch => {
 		axios.get('/movies/categories', {params: {target: category}})
     .then(response => {
-      localStorage.setItem('searchResults', JSON.stringify(response.data));
-      dispatch({ type: types.RECEIVE_CATEGORY, payload: response.data})
-    })
-    .then(function() {
+      // localStorage.setItem('searchResults', JSON.stringify(response.data));
+      dispatch({ type: types.SEARCH, payload: response.data})
       hashHistory.push('search');
     })
     .catch(function(err) {
@@ -70,7 +68,7 @@ export const search = (target) => {
   return dispatch => {
     axios.get('/movies/search', {params: {target}})
     .then(response => {
-      localStorage.setItem('searchResults', JSON.stringify(response.data));
+      // localStorage.setItem('searchResults', JSON.stringify(response.data));
       dispatch({ type: types.SEARCH, payload:response.data })
       hashHistory.push('search');
     })
