@@ -12,10 +12,10 @@ class Header extends Component {
  
   render() {
 
-    let user = this.props.user || undefined;
+    let user = this.props.user || null;
     let style = {};
     let hide = {}
-    if(user === undefined){
+    if(user === null){
       style.display = "none"
     } else {
       hide.display = "none"
@@ -46,7 +46,7 @@ class Header extends Component {
 
 function mapStateToProps(state) {
   return {
-    user: state.signedUser.signedUser
+    user: state.authUser.authUser
   }
 }
 
