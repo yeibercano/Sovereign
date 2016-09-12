@@ -5,6 +5,7 @@ import { authUser } from './auth_reducer'
 import { search } from './search_reducer'
 import { register } from './register_reducer'
 import { movieSelected } from './movie_selected_reducer'
+import { rating } from './voting_reducer'
 import { reducer as form } from 'redux-form'
 
  const reducers = combineReducers({
@@ -14,7 +15,8 @@ import { reducer as form } from 'redux-form'
  	form, 
  	search,
  	register, 
- 	movieSelected
+ 	movieSelected,
+ 	rating
  })
 
 export default reducers;
