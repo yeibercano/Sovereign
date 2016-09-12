@@ -1,20 +1,17 @@
 import React, { Component } from 'react'
-import { hashHistory } from 'react-router'
+import { connect } from 'react-redux'
+import { unAuthUser } from '../../actions/index'
 
 class UserLogout extends Component {
 
-  logout() {
-    localStorage.removeItem("user");
-    hashHistory.push('home')
-  }
- 
   render() {
+    const { unAuthUser } = this.props;
     return (
       <aside className="userLogin"> 
-        <h1 onClick={this.logout}>logout</h1>
+        <h1 onClick={unAuthUser}>logout</h1>
       </aside>
     )
   }
 }
 
-export default UserLogout
+export default connect(null, { unAuthUser })(UserLogout)
