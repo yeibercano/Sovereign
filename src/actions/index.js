@@ -49,16 +49,23 @@ export const movieSelected = (movie) => {
   }
 }
 
-export const signInUser = (userLogin) => {
+export const authUser = (userLogin) => {
   return dispatch => {
     axios.post('/users/login',userLogin)
     .then(response => {
-      dispatch({ type: types.SIGNED_USER, payload: response.data})
+      dispatch({ type: types.AUTH_USER, payload: response.data})
       hashHistory.push('profile')
     })
     .catch(function(err){
       if (err ) throw err
     });
+  }
+}
+
+export const unAuthUser = () => {
+  return dispatch => {
+    dispatch({ type: types.UNAUTH_USER, payload: null})
+    hashHistory.push('home')
   }
 }
 
