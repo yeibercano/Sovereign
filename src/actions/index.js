@@ -15,7 +15,6 @@ export const getCategory = (category)  => {
 	return dispatch => {
 		axios.get('/movies/categories', {params: {target: category}})
     .then(response => {
-      // localStorage.setItem('searchResults', JSON.stringify(response.data));
       dispatch({ type: types.SEARCH, payload: response.data})
       hashHistory.push('search');
     })
@@ -46,7 +45,6 @@ export const userMoviesSelected = (movie) => {
 export const movieSelected = (movie) => {
   return dispatch => {
     dispatch({ type: types.MOVIE_SELECTED, payload: movie})
-    localStorage.setItem('viewerMovie', JSON.stringify(movie));
     hashHistory.push('viewer')  
   }
 }
@@ -68,7 +66,6 @@ export const search = (target) => {
   return dispatch => {
     axios.get('/movies/search', {params: {target}})
     .then(response => {
-      // localStorage.setItem('searchResults', JSON.stringify(response.data));
       dispatch({ type: types.SEARCH, payload:response.data })
       hashHistory.push('search');
     })
