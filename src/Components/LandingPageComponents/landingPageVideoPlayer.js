@@ -10,14 +10,6 @@ import { movieSelected } from '../../actions/index'
 // when clicked, they play in the ProfilePlayer
 class LandingPageVideoPlayer extends Component {
 
-  constructor (props) {
-    super (props)  
-    this.onClickHandler = this.onClickHandler.bind(this);
-  }
-
-  __routeToViewing(e){
-    e.preventDefault();
-  }
   onMouseOverHandler() {
     document.getElementById("play_img").style.visibility = "visible";
   }
