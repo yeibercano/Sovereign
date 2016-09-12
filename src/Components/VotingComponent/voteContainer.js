@@ -2,42 +2,21 @@ import React, { Component } from 'react';
 import VoteVideoPlayer from './votingPlayer';
 import VoteVideoList from './votingVideoList';
 import Rating from './rating';
+import { connect } from 'react-redux'
 
 // this is the parent component 
 class VoteContainer extends Component {
 
-  constructor (props) {
-    super (props) 
-
-    let movieSelected = localStorage.getItem('viewerMovie')
-    if (movieSelected === '{}') {
-      this.state = {
-        videoUrl: null
-      }
-    } else {
-      movieSelected = JSON.parse(movieSelected);
-      this.state = {
-        videoUrl: movieSelected.video,
-        videoImage: movieSelected.image,
-        videoTitle: movieSelected.title,
-        videoSynopsis: movieSelected.synopsis,
-        videoActors: movieSelected.actors,
-        videoDirector: movieSelected.director,
-        videoYear: movieSelected.year
-      }
-    }
-  }
- 
-  render() {
-
-    if (this.state.url === null) {
+   render() {
+    const { movieSelected } = this.props;
+    if (movieSelected === null) {
       return <div>Loading...</div>
     }
 
     return (
       <section className="voting_page_container">
-        <VoteVideoPlayer movie= {this.state.videoUrl} title = {this.state.videoTitle}/>
-        <VoteVideoList movie={ this.state} />
+        <VoteVideoPlayer movie= {movieSelected.video} title = {movieSelected.title}/>
+        <VoteVideoList movie={ movieSelected } />
         <section id="star-rating" style={{visibility: "hidden"}}>
           <Rating  />
         </section>
@@ -46,4 +25,10 @@ class VoteContainer extends Component {
   }
 }
 
-export default VoteContainer
+function mapStateToProps(state) {
+  return {
+    movieSelected: state.movieSelected.viewerMovie
+  }
+}
+
+export default connect(mapStateToProps, null)(VoteContainer)
