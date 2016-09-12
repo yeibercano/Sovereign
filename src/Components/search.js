@@ -39,7 +39,7 @@ class Search extends Component{
 
 function mapStateToProps(state) {
   return {
-    sResults: state.category.allMovies
+    sResults: state.search.results
   }
 }
 
