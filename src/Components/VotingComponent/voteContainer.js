@@ -25,10 +25,6 @@ class VoteContainer extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    movieSelected: state.movieSelected.viewerMovie
-  }
-}
+const mapStateToProps = (state) => ({ movieSelected: state.movieSelected.viewerMovie })
 
 export default connect(mapStateToProps, null)(VoteContainer)
