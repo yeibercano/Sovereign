@@ -54,7 +54,6 @@ var UploadNewVideo = React.createClass({
        return hashHistory.push('profile')
       }
     document.getElementbyId("loading")
-    console.log('File uploaded successfully')
     }) 
 },
  
