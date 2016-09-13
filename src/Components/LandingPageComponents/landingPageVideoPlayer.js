@@ -58,11 +58,7 @@ class LandingPageVideoPlayer extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    viewerMovie: state.movieSelected.viewerMovie
-  }
-}
+const mapStateToProps = (state) => ({ viewerMovie: state.movieSelected.viewerMovie })
 
 export default connect(mapStateToProps, { movieSelected })(LandingPageVideoPlayer)
 
