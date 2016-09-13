@@ -36,11 +36,8 @@ class ViewingPage extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    selectedMovie: state.movieSelected.viewerMovie
-  }
-}
+const mapStateToProps = (state) => ({ selectedMovie: state.movieSelected.viewerMovie })
+
 export default connect(mapStateToProps, null)(ViewingPage)
 
 
