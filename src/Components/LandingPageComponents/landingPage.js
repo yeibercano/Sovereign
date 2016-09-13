@@ -24,8 +24,7 @@ class LandingPage extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return { allMovies: state.movies.allMovies }
-}
+
+const mapStateToProps = (state) => ({ allMovies: state.movies.allMovies })
 
 export default connect(mapStateToProps, { getMovies })(LandingPage);
