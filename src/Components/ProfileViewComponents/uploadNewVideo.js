@@ -1,10 +1,8 @@
-var React = require('react');
-var axios = require('axios');
-var secret = require("../../../private.js")
+import React, { Component } from 'react';
+import axios from 'axios';
+import secret from '../../../private.js';
 import Load from 'react-loading';
 import { Router, Redirect, Route, IndexRoute, Link, hashHistory, browserHistory} from 'react-router'
-
-
 
 var UploadNewVideo = React.createClass({
 
