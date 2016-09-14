@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import { hashHistory } from 'react-router'
 import { connect } from 'react-redux'
 import { movieSelected } from '../../actions/index'
 
