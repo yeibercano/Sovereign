@@ -37,11 +37,7 @@ class Search extends Component{
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    sResults: state.search.results
-  }
-}
+const mapStateToProps = () => ({ sResults: state.search.results })
 
 export default connect(mapStateToProps, { movieSelected })(Search)
 
