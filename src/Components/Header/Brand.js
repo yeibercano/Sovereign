@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { hashHistory, Link } from 'react-router';
-import axios from 'axios';
 import { connect } from 'react-redux'
 import { getCategory } from '../../actions/index'
 
