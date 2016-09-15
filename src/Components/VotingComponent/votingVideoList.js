@@ -13,9 +13,9 @@ class VotingVideoList extends Component {
         <section id="synopsis">
           <h5>{this.props.movie.synopsis}</h5>
         </section>
-          <h5>Actors:   {this.props.movie.actors}</h5>
-          <h5>Director:   {this.props.movie.director}</h5>
-          <h5>Released:   {this.props.movie.year}</h5>
+          <h5>Actors:{this.props.movie.actors}</h5>
+          <h5>Director: {this.props.movie.director}</h5>
+          <h5>Released:{this.props.movie.year}</h5>
         </section>
       </section>
     );

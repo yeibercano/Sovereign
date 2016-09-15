@@ -31,7 +31,7 @@ class Search extends Component{
         <section className="result_header">
           <h1>Results For Your Search: </h1>
         </section>
-        {sResults.map(result=> this.displayResult(result.m.properties))}
+        {sResults.map(result => this.displayResult(result.m.properties))}
       </section>
     );
   }
