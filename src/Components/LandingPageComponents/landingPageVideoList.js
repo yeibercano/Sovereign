@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Load from 'react-loading'
-import { hashHistory } from 'react-router'
 import { connect } from 'react-redux'
 import { movieSelected } from '../../actions/index'
 
