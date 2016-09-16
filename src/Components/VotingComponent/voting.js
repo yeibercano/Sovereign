@@ -1,22 +1,7 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { connect } from 'react-redux';
-import { selectedMovie } from '../../index';
 
 class VotingComponent extends Component {
-
-  constructor (props) {
-    super (props)  
-    this.state = {
-      allMovies: null
-    }
-  }
-
-  componentWillMount () {
-    axios.get("/movies").then(data => {
-      this.setState({ allMovies: data.data });
-    });
-  }
 
   renderImage (movie) {
     return (
@@ -26,13 +11,10 @@ class VotingComponent extends Component {
       </section>
     )
   }
-  
-  selectedMovie (movie) {
-    this.setState({url: movie.video})
-  }
 
-  render() {
-    if (this.state.allMovies === null) {
+  render () {
+    const { allMovies } = this.props;
+    if (allMovies === null) {
       return <div>Loading...</div>
     }
 
@@ -47,5 +29,7 @@ class VotingComponent extends Component {
   }
 }
 
-export default connect(null, null)(VotingComponent)
+const mapStateToProps = (state) => ({ allMovies: state.movies.allMovies })
+
+export default connect(mapStateToProps, null)(VotingComponent)
 
