@@ -25,9 +25,9 @@ class ViewingPage extends Component {
                 <section id="synopsis">
                 <h4>{selectedMovie.synopsis}</h4>
                 </section>
-                <h4>Actors: {selectedMovie.actors}</h4>
-                <h4>Director: {selectedMovie.director}</h4>
-                <h4>Release: {selectedMovie.year}</h4>
+                <h4>Actors:{selectedMovie.actors}</h4>
+                <h4>Director:{selectedMovie.director}</h4>
+                <h4>Release:{selectedMovie.year}</h4>
               </section>
             </section>
         </aside>

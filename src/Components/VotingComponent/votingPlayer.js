@@ -20,7 +20,7 @@ class VoteVideoPlayer extends Component {
         <video 
           autoPlay controls src={this.props.movie} 
           id="myVideo" type="video/mp4" 
-          onEnded={e=> this.movieEnded(e, this.props.title)} />
+          onEnded={e => this.movieEnded(e, this.props.title)} />
       </section>
     );
   }
