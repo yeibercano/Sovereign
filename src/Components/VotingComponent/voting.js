@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { selectedMovie } from '../../index';
 
 class VotingComponent extends Component {
 
@@ -45,5 +47,5 @@ class VotingComponent extends Component {
   }
 }
 
-export default VotingComponent
+export default connect(null, null)(VotingComponent)
 
