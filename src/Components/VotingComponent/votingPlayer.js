@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 class VoteVideoPlayer extends Component {
   
   ratingTimeout(){
-    alert("Voting for the movie" + this.props.title + "is about to close, please rate");
+    alert(`Voting for the movie ${this.props.title} is about to close, please rate`);
   }
 
   movieEnded (e, movie){
