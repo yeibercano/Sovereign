@@ -5,33 +5,48 @@ import { reduxForm } from 'redux-form'
 
 class CreateAccountScreen extends Component {
 
-  constructor (props) {
-    super (props)
-    this._saveAndContinue = this._saveAndContinue.bind(this)
-  }
-  _saveAndContinue(e) {
-    e.preventDefault();
-    let uInfo = {
-      firstName : this.firstName.value,
-      lastName : this.lastName.value,
-      userName :  this.userName.value,
-      password : this.password.value,
-      confirmPassword :  this.confirmPassword.value,
-      email : this.email.value,
-      website : this.website.value,
-      companyName : this.companyName.value,
-      phoneNumber : this.phoneNumber.value,
-      loggedIn: true
-    }
-    this.props.register(uInfo)
+  // constructor (props) {
+  //   super (props)
+  //   this._saveAndContinue = this._saveAndContinue.bind(this)
+  // }
+  // _saveAndContinue(e) {
+  //   e.preventDefault();
+  //   let uInfo = {
+  //     firstName : this.firstName.value,
+  //     lastName : this.lastName.value,
+  //     userName :  this.userName.value,
+  //     password : this.password.value,
+  //     confirmPassword :  this.confirmPassword.value,
+  //     email : this.email.value,
+  //     website : this.website.value,
+  //     companyName : this.companyName.value,
+  //     phoneNumber : this.phoneNumber.value,
+  //     loggedIn: true
+  //   }
+  //   this.props.register(uInfo)
+  // }
+
+  handleFormSubmit(user){
+    this.props.register(user)
   }
 
   render () {
+    const { handleSubmit, fields: { 
+      firstName, 
+      lastName, 
+      userName, 
+      password, 
+      confirmPassword, 
+      email, 
+      website, 
+      companyName, 
+      phoneNumber }} = this.props;
+
     return (
       <div className="create_account_screen">
         <div className="create_account_form">
           <h1>Create account</h1>
-          <form onSubmit={this._saveAndContinue}>
+          <form onSubmit={this.handleSubmit(this.handleFormSubmit.bind(this))}>
             <input
               type="text"
               ref={input=> this.firstName = input} 
