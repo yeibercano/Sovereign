@@ -18,7 +18,7 @@ export const getCategory = (category)  => {
       dispatch({ type: types.SEARCH, payload: response.data})
       hashHistory.push('search');
     })
-    .catch(function(err) {
+    .catch(err => {
       if (err) throw err
     });
 	}
@@ -30,7 +30,7 @@ export const userMovies = (username) => {
     .then(response => {
       dispatch({ type: types.USER_MOVIES, payload:response.data})
     })
-    .catch(function(err){
+    .catch(err => {
       if (err) throw err
     });
   }
@@ -63,7 +63,7 @@ export const authUser = (userLogin) => {
       dispatch({ type: types.AUTH_USER, payload: response.data})
       hashHistory.push('profile')
     })
-    .catch(function(err){
+    .catch(err => {
       if (err ) throw err
     });
   }
@@ -83,7 +83,7 @@ export const search = (target) => {
       dispatch({ type: types.SEARCH, payload:response.data })
       hashHistory.push('search');
     })
-    .catch(function(err) {
+    .catch(err => {
       if (err) throw err
     });
   }
