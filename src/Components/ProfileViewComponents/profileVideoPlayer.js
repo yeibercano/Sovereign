@@ -25,12 +25,10 @@ class ProfileVideoPlayer extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return { 
-    url: state.userMovies.recentMovieUrl, 
-    allMovies: state.userMovies.userMovies
-  } 
-}
+const mapStateToProps = (state) => ({ 
+  url: state.userMovies.recentMovieUrl, 
+  allMovies: state.userMovies.userMovies
+})
 
 export default connect(mapStateToProps, { userMovies, userMoviesSelected })(ProfileVideoPlayer)
 
