@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { register } from '../actions/index'
+import { reduxForm } from 'redux-form'
 
 class CreateAccountScreen extends Component {
 
@@ -98,6 +99,9 @@ class CreateAccountScreen extends Component {
   }
 };
     
-export default connect(null, { register })(CreateAccountScreen);
+export default reduxForm({
+  form: 'registerForm',
+  fields: ['firstName', 'lastName', 'userName', 'password', 'confirmPassword', 'email', 'website' ,'companyName','phoneNumber']
+}, null, { register })(CreateAccountScreen);
 
 
