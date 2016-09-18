@@ -5,29 +5,7 @@ import { reduxForm } from 'redux-form'
 
 class CreateAccountScreen extends Component {
 
-  // constructor (props) {
-  //   super (props)
-  //   this._saveAndContinue = this._saveAndContinue.bind(this)
-  // }
-  // _saveAndContinue(e) {
-  //   e.preventDefault();
-  //   let uInfo = {
-  //     firstName : this.firstName.value,
-  //     lastName : this.lastName.value,
-  //     userName :  this.userName.value,
-  //     password : this.password.value,
-  //     confirmPassword :  this.confirmPassword.value,
-  //     email : this.email.value,
-  //     website : this.website.value,
-  //     companyName : this.companyName.value,
-  //     phoneNumber : this.phoneNumber.value,
-  //     loggedIn: true
-  //   }
-  //   this.props.register(uInfo)
-  // }
-
   handleFormSubmit(user){
-    console.log('user', user)
     this.props.register(user)
   }
 
