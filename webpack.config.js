@@ -32,9 +32,6 @@ const common = {
       {
         test: /\.jsx?$/,
         loader: 'babel-loader',
-        query: {
-          presets: ['es2015', 'react', 'stage-0', 'stage-2']
-        },
         exclude: '/node_modules'
       },
       //This converts our .css into JS
