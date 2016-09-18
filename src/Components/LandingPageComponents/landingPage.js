@@ -6,7 +6,7 @@ import { getMovies } from '../../actions/index'
 
 class LandingPage extends Component {
   
-  componentWillMount() {
+  componentDidMount() {
     this.props.getMovies();
   }
  
