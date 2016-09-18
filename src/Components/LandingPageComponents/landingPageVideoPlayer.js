@@ -19,7 +19,7 @@ class LandingPageVideoPlayer extends Component {
 
   onClickHandler (e, movieProps) {
     e.preventDefault();
-    this.props.movieSelected(movieProps)
+    movieSelected(movieProps)
   }
 
   renderImage(mov) {
@@ -40,7 +40,7 @@ class LandingPageVideoPlayer extends Component {
   }
 
   render() {
-    const { allMovies, viewerMovie } = this.props;
+    const { allMovies } = this.props;
     if (allMovies === null) {
       return ( <div>Loading...</div> );
     }
@@ -51,14 +51,12 @@ class LandingPageVideoPlayer extends Component {
           { allMovies.map( movie => this.renderImage(movie))}
         </Carousel>
         <section style={{display: "none"}}>
-        <ViewingPage movieSent={viewerMovie} />
+        <ViewingPage />
         </section>
       </section>
     );
   }
 }
 
-const mapStateToProps = (state) => ({ viewerMovie: state.movieSelected.viewerMovie })
-
-export default connect(mapStateToProps, { movieSelected })(LandingPageVideoPlayer)
+export default LandingPageVideoPlayer
 
