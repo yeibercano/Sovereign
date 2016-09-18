@@ -45,6 +45,7 @@ var UploadNewVideo = React.createClass({
     var form = document.querySelector("form");
     //the variable fdata will be the actual form that will have the new file uploaded
     var fdata = new FormData(form);
+    console.log('fdata', fdata)
     // send fdata to our server to upload file to s3
     axios.post('/movies/movieS3', fdata)
     .then(function(res){
@@ -123,3 +124,7 @@ var UploadNewVideo = React.createClass({
 });
     
 module.exports = UploadNewVideo;
+
+
+
+
