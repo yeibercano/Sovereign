@@ -29,7 +29,11 @@ var config = {
       "process.env": { 
         NODE_ENV: JSON.stringify("production") 
       }
-    })
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Sovereign',
+      filename: 'index.html'
+    }),
   ],
 
   module: {
