@@ -1,5 +1,5 @@
 {
-   "engines": {
+  "engines": {
     "node": "5.10.0"
   },
   "main": "server.js",
@@ -62,6 +62,10 @@
     "webpack-validator": "^2.2.7"
   },
   "devDependencies": {
-    "randomstring": "^1.1.5"
+    "clean-webpack-plugin": "^0.1.10",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "html-webpack-plugin": "^2.22.0",
+    "randomstring": "^1.1.5",
+    "webpack-manifest-plugin": "^1.0.1"
   }
 }
