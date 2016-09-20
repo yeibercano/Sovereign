@@ -1,6 +1,7 @@
 node_modules
 private.js
 thesis.sublime-workspace
+public/build
 npm-debug.log
 sovereign.sublime-project
 sovereign.sublime-workspace
