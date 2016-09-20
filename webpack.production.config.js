@@ -7,15 +7,20 @@ var buildPath = path.resolve(__dirname, 'public', 'build');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var config = {
 
   // We change to normal source mapping
   devtool: 'source-map',
-  entry: './index.js',
+  entry: ['./index.js', './src/styles/main.css'],
   output: {
     path: buildPath,
-    filename: 'bundle.js'
+    // filename: 'bundle.js'
+    filename: 'js/[name].[hash].js',
+    // This is used for require.ensure. The setup
+    // will work without but this is useful to set.
+    chunkFilename: '[hash].js'
   },
   stats: {
     colors: true,
@@ -23,6 +28,7 @@ var config = {
     chuncks: false
   },
   plugins: [
+    new ExtractTextPlugin('/styles/[name].css'),
     new webpack.optimize.UglifyJsPlugin({
       minimize: true,
       mangle: false,
@@ -37,7 +43,8 @@ var config = {
     }),
     new HtmlWebpackPlugin({
       title: 'Sovereign',
-      filename: 'index.html'
+      filename: 'index.html',
+      template: './src/index.html'
     }),
     new CleanWebpackPlugin(buildPath, {
         // Without `root` CleanWebpackPlugin won't point to our
@@ -55,7 +62,12 @@ var config = {
         exclude: '/node_modules'
       },
       //This converts our .css into JS
-      { test: /\.s?css$/, loaders: ['style', 'css', 'sass?outputStyle=expanded'] },
+      { 
+        test: /\.s?css$/, 
+        // loaders: ['style', 'css', 'sass?outputStyle=expanded'] },
+        loader: ExtractTextPlugin.extract('style-loader', ['css-loader', 'postcss-loader']),
+        include: __dirname + '/src/styles',
+      }
     ]
   },
 
