@@ -2,6 +2,7 @@ var webpack = require('webpack');
 var path = require('path');
 var nodeModulesPath = path.resolve(__dirname, 'node_modules');
 var buildPath = path.resolve(__dirname, 'public', 'build');
+const validate = require('webpack-validator');
 
 // Plugins
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -96,4 +97,4 @@ var config = {
   },
 };
 
-module.exports = config;
+module.exports = validate(config);
