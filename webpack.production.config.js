@@ -4,7 +4,9 @@ var nodeModulesPath = path.resolve(__dirname, 'node_modules');
 var buildPath = path.resolve(__dirname, 'public', 'build');
 
 // Plugins
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
 
 var config = {
 
@@ -37,6 +39,12 @@ var config = {
       title: 'Sovereign',
       filename: 'index.html'
     }),
+    new CleanWebpackPlugin(buildPath, {
+        // Without `root` CleanWebpackPlugin won't point to our
+        // project and will fail to work.
+        root: process.cwd()
+    }),
+    new ManifestPlugin()
   ],
 
   module: {
