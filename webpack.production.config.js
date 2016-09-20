@@ -9,10 +9,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+//PostCSS
+const postcssImport = require('postcss-import'),
+      precss = require('precss'),
+      cssnext = require('postcss-cssnext');
+
 var config = {
 
-  // We change to normal source mapping
-  devtool: 'source-map',
+  // We change to normal source mapping 
+  // cheap-module-source-map removes helpers included in source-map
+  devtool: 'cheap-module-source-map', 
   entry: ['./index.js', './src/styles/main.css'],
   output: {
     path: buildPath,
@@ -26,6 +32,15 @@ var config = {
     colors: true,
     reasons: true,
     chuncks: false
+  },
+  postcss: function (webpack) {
+    return [ 
+      postcssImport({
+        addDependencyTo: webpack
+      }),
+      precss,
+      cssnext
+    ];
   },
   plugins: [
     new ExtractTextPlugin('/styles/[name].css'),
