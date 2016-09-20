@@ -43,28 +43,30 @@ var config = {
     ];
   },
   plugins: [
-    new ExtractTextPlugin('/styles/[name].css'),
+    new webpack.DefinePlugin({
+      "process.env": { 
+        NODE_ENV: JSON.stringify("production") 
+      }
+    }),
+    new CleanWebpackPlugin(buildPath, {
+        // Without `root` CleanWebpackPlugin won't point to our
+        // project and will fail to work.
+        root: process.cwd()
+    }),
+    new ExtractTextPlugin('/styles/[name].[chunkhash].css'),
+    new HtmlWebpackPlugin({
+      title: 'Sovereign',
+      filename: 'index.html',
+      template: './src/index.html'
+    }),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       minimize: true,
       mangle: false,
       compress: {
         warnings: false
       }
-    }),
-    new webpack.DefinePlugin({
-      "process.env": { 
-        NODE_ENV: JSON.stringify("production") 
-      }
-    }),
-    new HtmlWebpackPlugin({
-      title: 'Sovereign',
-      filename: 'index.html',
-      template: './src/index.html'
-    }),
-    new CleanWebpackPlugin(buildPath, {
-        // Without `root` CleanWebpackPlugin won't point to our
-        // project and will fail to work.
-        root: process.cwd()
     }),
     new ManifestPlugin()
   ],
