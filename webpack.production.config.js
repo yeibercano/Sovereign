@@ -15,12 +15,20 @@ const postcssImport = require('postcss-import'),
       precss = require('precss'),
       cssnext = require('postcss-cssnext');
 
-var config = {
+const PATHS = {
+  app: path.join(__dirname, './index.js'),
+  styles: path.join(__dirname, 'src/styles/main.css'),
+  build: path.join(__dirname, 'public')
+};
 
+var config = {
   // We change to normal source mapping 
   // cheap-module-source-map removes helpers included in source-map
   devtool: 'cheap-module-source-map', 
-  entry: ['./index.js', './src/styles/main.css'],
+  entry: {
+    app: PATHS.app,
+    styles: [ PATHS.styles ]
+  },
   output: {
     path: buildPath,
     // filename: 'bundle.js'
@@ -29,10 +37,25 @@ var config = {
     // will work without but this is useful to set.
     chunkFilename: '[hash].js'
   },
-  stats: {
-    colors: true,
-    reasons: true,
-    chuncks: false
+  module: {
+    loaders: [
+      {
+        test: /\.jsx?$/,
+        loader: 'babel',
+        exclude: '/node_modules'
+      },
+      { 
+        test: /\.s?css$/, 
+        loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[name]---[local]---[hash:base64:5]!postcss'),
+        include: __dirname + '/src/styles',
+      }
+    ]
+  },
+  resolve: {
+      extensions: ['', '.js', '.jsx', '.css', '.scss', '.json'],
+      modulesDirectories: [
+        'node_modules'
+      ]        
   },
   postcss: function (webpack) {
     return [ 
@@ -54,7 +77,7 @@ var config = {
         // project and will fail to work.
         root: process.cwd()
     }),
-    new ExtractTextPlugin('/styles/[name].[chunkhash].css'),
+    new ExtractTextPlugin('/styles/[name].[contentHash].css', {allChunks: true}),
     new HtmlWebpackPlugin({
       title: 'Sovereign',
       filename: 'index.html',
@@ -71,30 +94,7 @@ var config = {
     }),
     new ManifestPlugin()
   ],
-
-  module: {
-    loaders: [
-      {
-        test: /\.jsx?$/,
-        loader: 'babel?presets[]=react,presets[]=es2015',
-        exclude: '/node_modules'
-      },
-      //This converts our .css into JS
-      { 
-        test: /\.s?css$/, 
-        // loaders: ['style', 'css', 'sass?outputStyle=expanded'] },
-        loader: ExtractTextPlugin.extract('style-loader', ['css-loader', 'postcss-loader']),
-        include: __dirname + '/src/styles',
-      }
-    ]
-  },
-
-  resolve: {
-      extensions: ['', '.js', '.jsx', '.css', '.scss', '.json'],
-      modulesDirectories: [
-        'node_modules'
-      ]        
-  },
 };
 
 module.exports = validate(config);
+

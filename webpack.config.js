@@ -24,7 +24,7 @@ const common = {
   stats: {
     colors: true,
     reasons: true,
-    chuncks: false
+    chuncks: true
   },
 
   module: {
@@ -34,10 +34,10 @@ const common = {
         loader: 'babel-loader',
         exclude: '/node_modules'
       },
-      //This converts our .css into JS
       {
         test: /\.css$/,
-        loader: 'css-loader'
+        loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[name]---[local]---[hash:base64:5]!postcss'),
+        include: __dirname + '/src/styles',
       }
     ]
   },
