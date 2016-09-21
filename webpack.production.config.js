@@ -18,7 +18,8 @@ const postcssImport = require('postcss-import'),
 const PATHS = {
   app: path.join(__dirname, './index.js'),
   styles: path.join(__dirname, 'src/styles/main.css'),
-  build: path.join(__dirname, 'public')
+  build: path.join(__dirname, 'public'),
+  images: path.join(__dirname, 'src/styles/assets')
 };
 
 var config = {
@@ -48,6 +49,11 @@ var config = {
         test: /\.s?css$/, 
         loader: ExtractTextPlugin.extract('style', 'css!postcss'),
         include: __dirname + '/src/styles',
+      },
+      {
+        test: /\.(jpg|png)$/,
+        loader: 'url?limit=25000',
+        include: PATHS.images
       }
     ]
   },
