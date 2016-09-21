@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { search } from '../../actions/index'
 import { connect } from 'react-redux'
+import searchIcon from '../../styles/assets/search-icon-sm.png'
 
 class SearchBar extends Component {
   searchTerm (e) {
@@ -25,7 +26,7 @@ class SearchBar extends Component {
           onClick= {this.submitSearch.bind(this)}
           type="submit"
           className="search_button">
-          <img id="search_button_img" src="../../styles/assets/search-icon-hi.png" />
+          <img id="search_button_img" src={searchIcon} />
         </button>
       </form>
     );
