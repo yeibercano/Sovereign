@@ -2,6 +2,13 @@ const path = require('path');
 const webpack = require('webpack');
 const validate = require('webpack-validator');
 
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+//PostCSS
+const postcssImport = require('postcss-import'),
+      precss = require('precss'),
+      cssnext = require('postcss-cssnext');
+
 const common = {
 
   //fastest rebuild and build speed
@@ -31,8 +38,8 @@ const common = {
     loaders: [
       {
         test: /\.jsx?$/,
-        loader: 'babel-loader',
-        exclude: '/node_modules'
+        loader: 'babel',
+        include: '/src'
       },
       {
         test: /\.css$/,
