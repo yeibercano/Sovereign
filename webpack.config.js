@@ -1,7 +1,10 @@
-const path = require('path');
-const webpack = require('webpack');
+const path = require('path')
+const webpack =require('webpack')
 const validate = require('webpack-validator');
 
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 //PostCSS
@@ -9,7 +12,14 @@ const postcssImport = require('postcss-import'),
       precss = require('precss'),
       cssnext = require('postcss-cssnext');
 
-const common = {
+const PATHS = {
+  app: path.join(__dirname, './index.js'),
+  styles: path.join(__dirname, 'src/styles/main.css'),
+  build: path.join(__dirname, 'public'),
+  images: path.join(__dirname, 'src/styles/assets')
+};
+
+const config = {
 
   //fastest rebuild and build speed
   devtool: 'eval', 
@@ -19,40 +29,56 @@ const common = {
     //refreshes the browser when it can't hot update
     'webpack-dev-server/client?http://localhost:8080', 
     //our entry point
-    './index.js' 
+    PATHS.app,
+    PATHS.styles 
   ],
   output: {
     path: path.join(__dirname, 'public', 'build'),
     filename: 'bundle.js',
-    // filename: '[name]-[hash].js',
-    // chunkFilename: '[name]-[hash].js',
     publicPath: '/build/' //the server will listen in on this path and then proxy Webpack
-  },
-  stats: {
-    colors: true,
-    reasons: true,
-    chuncks: true
   },
 
   module: {
     loaders: [
       {
-        test: /\.jsx?$/,
-        loader: 'babel',
-        include: '/src'
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: '/node_modules'
       },
+      //This converts our .css into JS
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[name]---[local]---[hash:base64:5]!postcss'),
-        include: __dirname + '/src/styles',
+        loader: ExtractTextPlugin.extract('style', ['css','postcss'])
+        // include: __dirname + '/src/styles'
+      },
+      {
+        test: /\.(jpg|png)$/,
+        loader: 'file?hash=sha512&digest=hex&name=[hash].[ext]!image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false',
+        include: PATHS.images
       }
     ]
+  },
+  postcss: function (webpack) {
+    return [ 
+      postcssImport({
+        addDependencyTo: webpack
+      }),
+      precss,
+      cssnext
+    ];
   },
   //Since we're running Webpack from our server, need to manually add the
   //Hot Replacement plugin
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new ExtractTextPlugin('/styles/[name].[contentHash].css', {allChunks: true})
   ]
 };
 
-module.exports = validate(common);
+module.exports = validate(config);
+
+
+
+
+
+
