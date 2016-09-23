@@ -5,6 +5,7 @@ import { hashHistory } from 'react-router'
 import ViewingPage from '../ViewingComponent/viewing'
 import { connect } from 'react-redux'
 import { movieSelected } from '../../actions/index'
+import playBtn from '../../styles/assets/play-btn-sm.png'
 
 //retrieve the videos from the user and display them 
 // when clicked, they play in the ProfilePlayer
@@ -19,7 +20,7 @@ class LandingPageVideoPlayer extends Component {
 
   onClickHandler (e, movieProps) {
     e.preventDefault();
-    movieSelected(movieProps)
+    this.props.movieSelected(movieProps)
   }
 
   renderImage(mov) {
@@ -28,7 +29,7 @@ class LandingPageVideoPlayer extends Component {
     if (movie.rating > 15) {
       return (
         <CarouselItem  key={movie.image} onMouseEnter={this.onMouseOverHandler}>
-          <img id="play_img" src="../../../styles/assets/play-btn.png" onMouseLeave={this.onMouseLeaveHandler} onClick={e => this.onClickHandler(e, movie)} />
+          <img id="play_img" src={playBtn} onMouseLeave={this.onMouseLeaveHandler} onClick={e => this.onClickHandler(e, movie)} />
           <img id="carousel-img" onClick={e => this.onClickHandler(e, movie)} src={movie.image}/>
             <Carousel.Caption id="carousel-caption">
               <h2 id='title-caption'>{movie.title}</h2>
@@ -58,5 +59,5 @@ class LandingPageVideoPlayer extends Component {
   }
 }
 
-export default LandingPageVideoPlayer
+export default connect(null, { movieSelected })(LandingPageVideoPlayer)
 
