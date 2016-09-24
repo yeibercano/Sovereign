@@ -1,5 +1,6 @@
 .wrapper {
   height: 100%;
+  flex: 1;
 }
 section.landing_page {
  /* width: 1200px;
