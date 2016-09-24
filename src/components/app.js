@@ -5,7 +5,7 @@ import Header from './Header/Header'
 class App extends Component {
   render() {
     return (
-      <section>
+      <section className="appContainer">
         <Header />
         <section className="wrapper">
           {this.props.children}
