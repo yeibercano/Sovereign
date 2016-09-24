@@ -22,6 +22,9 @@ class LandingPageVideoPlayer extends Component {
     e.preventDefault();
     this.props.movieSelected(movieProps)
   }
+  handleMovieSynopsis(synopsis) {
+    return `${synopsis.substring(0, 160)}...`
+  }
 
   renderImage(mov) {
     let movie = mov.m.properties;
@@ -33,7 +36,7 @@ class LandingPageVideoPlayer extends Component {
           <img id="carousel-img" onClick={e => this.onClickHandler(e, movie)} src={movie.image}/>
             <Carousel.Caption id="carousel-caption">
               <h2 id='title-caption'>{movie.title}</h2>
-              <h4 id='synopsis-caption'>{movie.synopsis}</h4>
+              <h4 id='synopsis-caption'>{this.handleMovieSynopsis(movie.synopsis)}</h4>
             </Carousel.Caption>
         </CarouselItem>
       )
