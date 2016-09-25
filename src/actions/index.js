@@ -62,6 +62,7 @@ export const authUser = (userLogin) => {
     .then(response => {
       dispatch({ type: types.AUTH_USER, payload: response.data})
       hashHistory.push('profile')
+      localStorage.setItem('token', JSON.stringify(response.data))
     })
     .catch(err => {
       if (err ) throw err
