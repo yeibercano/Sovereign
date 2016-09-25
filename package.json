@@ -68,6 +68,7 @@
     "html-webpack-plugin": "^2.22.0",
     "image-webpack-loader": "^2.0.0",
     "randomstring": "^1.1.5",
+    "rucksack-css": "^0.8.6",
     "url-loader": "^0.5.7",
     "webpack-manifest-plugin": "^1.0.1"
   }
