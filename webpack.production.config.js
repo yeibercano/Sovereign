@@ -13,7 +13,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 //PostCSS
 const postcssImport = require('postcss-import'),
       precss = require('precss'),
-      cssnext = require('postcss-cssnext');
+      cssnext = require('postcss-cssnext'),
+      rucksack = require('rucksack-css');
 
 const PATHS = {
   app: path.join(__dirname, './index.js'),
@@ -69,6 +70,7 @@ var config = {
         addDependencyTo: webpack
       }),
       precss,
+      rucksack,
       cssnext
     ];
   },
@@ -91,13 +93,13 @@ var config = {
     }),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      minimize: true,
-      mangle: false,
-      compress: {
-        warnings: false
-      }
-    }),
+    // new webpack.optimize.UglifyJsPlugin({
+    //   minimize: true,
+    //   mangle: false,
+    //   compress: {
+    //     warnings: false
+    //   }
+    // }),
     new ManifestPlugin()
   ],
 };
