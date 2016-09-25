@@ -10,7 +10,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 //PostCSS
 const postcssImport = require('postcss-import'),
       precss = require('precss'),
-      cssnext = require('postcss-cssnext');
+      cssnext = require('postcss-cssnext'),
+      rucksack = require('rucksack-css');
 
 const PATHS = {
   app: path.join(__dirname, './index.js'),
@@ -64,6 +65,7 @@ const config = {
         addDependencyTo: webpack
       }),
       precss,
+      rucksack,
       cssnext
     ];
   },
@@ -71,7 +73,7 @@ const config = {
   //Hot Replacement plugin
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new ExtractTextPlugin('/styles/[name].[contentHash].css', {allChunks: true})
+    new ExtractTextPlugin('main.css', {allChunks: true})
   ]
 };
 
