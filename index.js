@@ -4,7 +4,8 @@ import { Router, Route, IndexRoute, hashHistory, browserHistory } from 'react-ro
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
-import createLogger from 'redux-logger'
+import createLogger from 'redux-logger';
+import { AUTH_USER } from './src/actions/types'
 
 import App from './src/Components/app'
 import LandingPage from './src/Components/LandingPageComponents/landingPage'
@@ -20,6 +21,12 @@ import reducers from './src/reducers/index'
 const logger = createLogger();
 const createStoreWithMiddleware = applyMiddleware(reduxThunk, logger)(createStore);
 const store = createStoreWithMiddleware(reducers);
+
+const token = JSON.parse(localStorage.getItem('token'));
+
+if (token) {
+  store.dispatch({ type: AUTH_USER, payload: token })
+}
 
 render(
   <Provider store={store}>
