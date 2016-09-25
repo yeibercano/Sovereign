@@ -67,16 +67,15 @@ nav a:hover {
   opacity:.7;
 }
 .headerBackground {
-  /*background-color: rgba(0, 0, 0, 0.5);*/
-  background-color: #316daa;
+  background-color: $mainColor;
+
 }
 
 /* MENU DROPDOWN */
 /* Dropdown Button */
 .dropbtn {
-    /*background-color: rgba(0, 0, 0, 0.5); */
-    background-color: #316daa; 
-    color: white;
+    background-color: $mainColor;
+    color: $white;
     padding: 16px;
     font-size: 16px;
     border: none;
@@ -127,7 +126,7 @@ nav a:hover {
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
   /*background-color: #525252;*/
-  background-color: #71A7DD;
+  background-color: $offBlue;
 
 }
 
