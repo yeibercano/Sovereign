@@ -1,20 +1,21 @@
 
-@import './_normalize.css';
-@import './_base.css';
-@import './_header.css';
-@import './_landing.css';
-@import './_carousel.css';
-@import './_search.css';
-@import './_viewing.css';
-@import './_profile.css';
-@import './_form.css';
-@import './_buttons.css';
-@import './_voting.css';
-@import './_searchResults.css';
-@import './_footer.css';
-@import './_login.css';
-@import './_video.css';
-@import './_loading.css';
+@import '_normalize.css';
+@import '_variables';
+@import '_base.css';
+@import '_header.css';
+@import '_landing.css';
+@import '_carousel.css';
+@import '_search.css';
+@import '_viewing.css';
+@import '_profile.css';
+@import '_form.css';
+@import '_buttons.css';
+@import '_voting.css';
+@import '_searchResults.css';
+@import '_footer.css';
+@import '_login.css';
+@import '_video.css';
+@import '_loading.css';
 
 
 
