@@ -1,7 +1,5 @@
 section.carousel-div{
-/*  margin-top: -18px;*/
-  /*padding-bottom: 40px;*/
-      border-bottom: 5px solid #316daa;
+  border-bottom: 5px solid $mainColor;
 }
 #carousel-img{
     margin: 0px auto;
