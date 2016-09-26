@@ -30,8 +30,8 @@ nav a:hover {
   text-decoration: none;
 }
 .brand h1 {
-  font-family: bebas-neue, sans-serif;
-  font-size: 40px;
+  font-family: $brandFont;
+  font-size: responsive 20px 40px;
   letter-spacing: 2px;
   padding-top: 8px;
 }
