@@ -6,6 +6,19 @@
   article.landing_page_movieInfo {
     width: 50%;
   }
+  /* input placeholder */
+  ::-webkit-input-placeholder { /* WebKit browsers */
+      color: transparent;
+  }
+  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+     color: transparent;
+  }
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+     color: transparent;
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10+ */
+     color: transparent;
+  }
 }
 
 /*@custom-media --small-viewport (width <= 368px) and (width <= 750px);*/
@@ -16,5 +29,18 @@
   }
   article.landing_page_movieInfo {
     width: 100%;
+  }
+  /* input placeholder */
+  ::-webkit-input-placeholder { /* WebKit browsers */
+      color: transparent;
+  }
+  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+     color: transparent;
+  }
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+     color: transparent;
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10+ */
+     color: transparent;
   }
 }
