@@ -23,10 +23,6 @@
   border: 8px solid $white;
   cursor: pointer;
   height: 350px;
-  filter: grayscale(.6);
-  &:hover {
-    filter: grayscale(0);
-  }
 }
 .search-item-container {
   border-radius: 550px;
