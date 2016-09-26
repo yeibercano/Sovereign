@@ -1,0 +1,20 @@
+@custom-media --medium-viewport (width >= 768px) and (width <= 992px);
+@media (--medium-viewport) {
+  .landing_page {
+    flex-wrap: wrap;
+  }
+  article.landing_page_movieInfo {
+    width: 50%;
+  }
+}
+
+/*@custom-media --small-viewport (width <= 368px) and (width <= 750px);*/
+@custom-media --small-viewport (width < 768px);
+@media (--small-viewport) {
+  .landing_page {
+    flex-wrap: wrap;
+  }
+  article.landing_page_movieInfo {
+    width: 100%;
+  }
+}
