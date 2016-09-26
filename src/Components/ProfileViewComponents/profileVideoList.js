@@ -22,7 +22,7 @@ class ProfileVideoList extends Component {
     const { moviesList } = this.props;
     return (
       <section>
-        <h1 className="upload_list_title">Your Uploaded Content</h1>
+        <h1 className="upload_list_title">Your Movies</h1>
         <Carousel className="profile_video_list">
           { moviesList.map(movie => this.videoInfo(movie.m.properties))}
         </Carousel>
