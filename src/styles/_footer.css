@@ -3,10 +3,12 @@ footer{
   height:25px;
 }
 footer h3{
-  color: white;
-  text-align: center;
+  color: $white;
 }
 .footerBackground {
-  height: 80px;
-  padding-top: 30px;
+    height: 4em;
+    margin-top: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
