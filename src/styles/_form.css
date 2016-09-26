@@ -1,22 +1,20 @@
-input{
+input {
   display: block;
   border-radius: 5px;
   width: 60%;
   height: 60px;
   margin: 15px auto;
-  /*font-size: 25px;*/
   font-size: 20px;
   border: 3px solid #222222;
   background-color: black;
   padding-left: 10px;
   color: white;
 }
-textarea{
+textarea {
   display: block;
   border-radius: 5px;
   width: 60%;
   height: 150px;
-  /*margin: 20px 50px;*/
   margin: 15px auto;
   font-size: 25px;
   border: 3px solid #222222;
@@ -26,19 +24,12 @@ textarea{
 }
 .create_account_screen {
 }
-.create_account_form h1{
- /* text-align: center;
+.create_account_form h1 {
+  text-align: center;
   color: white;
-  font-size: 27px;
+  font-size: 25px;
   padding-top: 20px;
-  font-family: bebas-neue, sans-serif;
-  letter-spacing: 2px;*/
-
-      text-align: center;
-    color: white;
-    font-size: 25px;
-    padding-top: 20px;
-    font-family: raleway, sans-serif;
-    /* letter-spacing: 2px; */
-    text-transform: uppercase;
+  font-family: raleway, sans-serif;
+  /* letter-spacing: 2px; */
+  text-transform: uppercase;
 }
