@@ -14,7 +14,7 @@ class UploadVideo extends Component {
           <input 
             type="submit" 
             name="submit"
-            value="Upload Video"
+            value="Upload Movie"
             className="upload-button" />
         </form>
       </section>
