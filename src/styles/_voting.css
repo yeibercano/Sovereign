@@ -7,7 +7,7 @@ section.parent_voting_container {
 section.voting_container{
   height: 550px;
   width: 1160px;
-  /*overflow: scroll;*/
+  overflow: scroll;
   position: relative;
   margin: 50px auto;
 }
