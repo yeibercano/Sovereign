@@ -14,7 +14,7 @@ class Search extends Component{
           <h3 id="search_title">{result.title}</h3>
         </section>
         <section className="search-item-container" >
-          <img className="searchResultsImg" id="search_image_result" src={result.image} />
+          <img className="searchResultsImg imagesFilter" id="search_image_result" src={result.image} />
         </section>
       </section>
     );

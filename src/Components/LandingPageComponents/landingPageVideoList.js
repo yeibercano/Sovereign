@@ -14,7 +14,7 @@ class LandingPageVideoList extends Component {
       return (
         <article key={movieInfo.image} onClick={() => this.handleMovie(movieInfo)} className="landing_page_movieInfo">
           <a href={() => this.handleMovie(movieInfo)}>
-            <img className="landing_page_movieInfo_image"src={movieInfo.image} /> 
+            <img className="landing_page_movieInfo_image imagesFilter" src={movieInfo.image} /> 
           </a>
         </article>
       );
