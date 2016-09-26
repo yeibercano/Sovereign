@@ -22,3 +22,8 @@ body{
     filter: grayscale(0);
   }
 }
+
+.centerContainer {
+	width: 85%;
+	margin: 0px auto;
+}
