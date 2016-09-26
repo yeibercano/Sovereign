@@ -1,31 +1,36 @@
 section.profile_container{
-  position: relative;
+  /*position: relative;
   height: 1100px;
+  width: 100%;*/
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 aside.account_information{
-  position: absolute;
   background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #316daa), color-stop(35%, #316DAA), color-stop(77%, #316daa), color-stop(86%, #316DAA), color-stop(100%, #316daa));
-  background-color: #046380;
-  height: 100%;
-  width: 325px;
+  width: 25%;
   padding: 30px;
   box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
   color: white;
 }
-#account_information_gravatar_container{
+#account_information_gravatar_container {
   border-bottom: 1px solid $white;
   padding: 30px 0px;
   margin-bottom: 20px;
+  & img {
+    width: 100%;
+    height: 100%;
+  }
 }
-#account_information_gravatar{
+#account_information_gravatar {
   border: 8px solid $white;
   border-radius: 100px;
   margin: 10px 0px;
   border-bottom: 2px solid $white;
 }
 #account_information_title {
-  font-size: 30px
+  font-size: responsive 12px 30px;
 }
 #full_name{
   display: block;
@@ -33,19 +38,25 @@ aside.account_information{
 aside.account_information h4 {
   display: inline-block;
   margin-bottom: 20px;
-  border-bottom: #FFFFFF;
+  border-bottom: $white;
+  font-size: responsive 10px 16px;
 }
 section.profile_video_player {
-  display: inline-block;
+/*  display: inline-block;
   position: absolute;
   margin-top: 40px;
-  left: 30%;
+  left: 30%;*/
+
+  margin-top: 0px;
+  /*width: 100%;*/
+  flex: 1;
 }
 section.profile_video_player video {
-  width: 900px;
+  width: 100%;
+ /* width: 900px;
   height: 400px;
   margin-left: -30px;
-  margin-bottom: 5px;
+  margin-bottom: 5px; */
 }
 section.profile_video_player h1 {
   text-align: center;
@@ -58,15 +69,15 @@ section.profile_video_player h1 {
   font-size: 30px;
 }
 .upload-button {
-  width: 500px;
-  color: white;
-  border: 1px solid #FFFFFF;
+  width: 100%;
+  color: $white;
+  border: 1px solid $white;
   margin-bottom: 100px;
 }
 section.upload_video_button {
-  position: absolute;
+  /*position: absolute;
   right: 36%;
-  bottom: 0%;
+  bottom: 0%;*/
 }
 .upload_list_title {
   margin-top: 25px;
@@ -74,11 +85,12 @@ section.upload_video_button {
   font-size: 30px;
 }
 .profile_video_list {
-  height: 300px;
+/*  height: 300px;
   width: 850px;
   padding: 10px;
   margin-top: 15px;
-  overflow: hidden;
+  overflow: hidden;*/
+  margin-top: 15px;
 }
 section.profile_video_list {
   background-color: #22222;
