@@ -44,3 +44,15 @@
      color: transparent;
   }
 }
+
+@media (width <= 800px) {
+  section.profile_container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  aside.account_information {
+    display: none;
+  }
+}
