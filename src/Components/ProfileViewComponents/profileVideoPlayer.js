@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ProfileVideoList from './profileVideoList'
 import { connect } from 'react-redux'
 import { userMovies, userMoviesSelected } from '../../actions' 
+import UploadVideos from './uploadVideo'
 
 class ProfileVideoPlayer extends Component {
   
@@ -17,9 +18,10 @@ class ProfileVideoPlayer extends Component {
     return (
       <section className="profile_video_player">
         <video controls src={url} type="video/mp4" />
-         <ProfileVideoList 
+        <ProfileVideoList 
           selectedMovie = {(selectedMovie) => this.selectedMovie(selectedMovie)}
           moviesList = {allMovies} />
+        <UploadVideos />
       </section>
     );
   }
