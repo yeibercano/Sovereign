@@ -2,8 +2,9 @@ footer{
   width:100%;
   height:25px;
 }
-footer h3{
+.footerText {
   color: $white;
+  font-size: $small;
 }
 .footerBackground {
     height: 4em;
