@@ -14,7 +14,7 @@
 }
 header h1 {
   color: white;
-  font-size: 16px;
+  font-size: responsive 12px 16px;
   padding-top: 20px;
   display: inline-flex;
   cursor: pointer;
