@@ -56,7 +56,7 @@ article.landing_page_movieInfo{
     color: white;*/
 
     text-align: center;
-    font-size: 25px;
+    font-size: responsive 16px 30px;
     padding: 20px 0px;
     color: white;
     font-family: raleway, sans-serif;
