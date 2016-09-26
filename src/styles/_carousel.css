@@ -11,8 +11,8 @@ section.carousel-div{
   opacity: 0.7;
 }
 #mini_carousel{
-  height: 300px;
-  margin: 0 auto;
+ /* height: 300px;
+  margin: 0 auto;*/
 }
 #play_img{
   position: absolute;
