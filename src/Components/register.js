@@ -8,6 +8,12 @@ class CreateAccountScreen extends Component {
     this.props.register(user)
   }
 
+  handleErrors(displayError) {
+    return (
+      <div className="registerErrorMes">{displayError}</div>
+    )
+  }
+
   render () {
     const { handleSubmit, fields: { 
       firstName, 
@@ -29,6 +35,7 @@ class CreateAccountScreen extends Component {
             <input type="text" {...lastName} placeholder ="Enter Last Name" />
             <input type="text" {...userName} placeholder ="Enter desired username" />
             <input type="password" {...password} placeholder ="Enter Password" />
+            { password.touched && password.error && this.handleErrors(password.error) }
             <input type="password" {...confirmPassword} placeholder ="Re-enter Password" />
             <input type="text" {...email} placeholder ="Enter E-mail" />
             <input type="text" {...website} placeholder="Enter Your Personal Website" />
@@ -41,10 +48,19 @@ class CreateAccountScreen extends Component {
     );
   }
 };
-    
+
+function validate(formProps) {
+  const errors = {};
+  if (formProps.password !== formProps.confirmPassword) {
+    errors.password = 'Passwords must match'
+  }
+  return errors
+}    
+
 export default reduxForm({
   form: 'registerForm',
-  fields: ['firstName', 'lastName', 'userName', 'password', 'confirmPassword', 'email', 'website' ,'companyName','phoneNumber']
+  fields: ['firstName', 'lastName', 'userName', 'password', 'confirmPassword', 'email', 'website' ,'companyName','phoneNumber'],
+  validate
 }, null, { register })(CreateAccountScreen);
 
 
