@@ -14,7 +14,7 @@ section.carousel-div{
  /* height: 300px;
   margin: 0 auto;*/
 }
-#play_img{
+.play_img{
   position: absolute;
   width: 10%;
   left: 45%;
@@ -25,6 +25,25 @@ section.carousel-div{
   & img {
     width: 100%;
     opacity: 0.7;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.featureButton {
+  position: absolute;
+  width: 20%;
+  left: 40%;
+  right: 41%;
+  cursor: pointer;
+  top: 25%;
+  z-index: 20;
+  opacity: .5;
+
+  & img {
+    opacity: .5;
 
     &:hover {
       opacity: 1;

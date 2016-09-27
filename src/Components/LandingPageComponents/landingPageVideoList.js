@@ -14,7 +14,7 @@ class LandingPageVideoList extends Component {
     if (movieInfo.rating > 2 && movieInfo.rating < 15) {
       return (
         <article key={movieInfo.image} onClick={() => this.handleMovie(movieInfo)} className="landing_page_movieInfo">
-        <div className="featureButton"> <img src={playBtn} onClick={e => this.onClickHandler(e, movie)} /></div>
+          <div className="featurePlayIcon"> <img src={playBtn} onClick={e => this.onClickHandler(e, movie)} /></div>
           <a href={() => this.handleMovie(movieInfo)}>
             <img className="landing_page_movieInfo_image imagesFilter" src={movieInfo.image} /> 
           </a>
