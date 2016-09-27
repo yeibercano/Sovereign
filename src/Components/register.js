@@ -15,7 +15,7 @@ class CreateAccountScreen extends Component {
   }
 
   render () {
-    const { handleSubmit, fields: { 
+    const { handleSubmit, submitting, pristine, fields: { 
       firstName, 
       lastName, 
       userName, 
@@ -43,7 +43,7 @@ class CreateAccountScreen extends Component {
             <input type="text" {...website} placeholder="Enter Your Personal Website" />
             <input type="text" {...companyName} placeholder ="Enter The Name Of Your Company" />
             <input type="text" {...phoneNumber} placeholder="Enter Your Phone Number" />
-            <input type="submit" value="Register" className="register-button" />
+            <input type="submit" disable={pristine || submitting} value="Register" className="register-button" />
           </form>
         </div>
       </div>
