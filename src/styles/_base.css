@@ -39,8 +39,8 @@ body{
   background-color: black;
   padding-left: 10px;
   color: white;
-  
-  & hover {
+
+  &:hover {
   background-color: $mainColor;
   }
 }
