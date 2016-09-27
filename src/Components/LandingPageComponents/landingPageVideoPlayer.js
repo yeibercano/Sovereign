@@ -25,7 +25,7 @@ class LandingPageVideoPlayer extends Component {
     if (movie.rating > 15) {
       return (
         <CarouselItem  key={movie.image} >
-         <div id="play_img"> <img src={playBtn} onClick={e => this.onClickHandler(e, movie)} /></div>
+         <div className="play_img"> <img src={playBtn} onClick={e => this.onClickHandler(e, movie)} /></div>
           <img id="carousel-img" onClick={e => this.onClickHandler(e, movie)} src={movie.image}/>
             <Carousel.Caption id="carousel-caption">
               <h2 id='title-caption'>{movie.title}</h2>
