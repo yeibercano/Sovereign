@@ -5,6 +5,9 @@
   background-color: #222222;
   color: white;
   border-radius: none;
+  &:hover {
+    background-color: $mainColor;
+  };
 }
 .login-button{
   height: 50px;
