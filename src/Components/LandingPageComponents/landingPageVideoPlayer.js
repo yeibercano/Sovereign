@@ -11,19 +11,12 @@ import playBtn from '../../styles/assets/play-btn-sm.png'
 // when clicked, they play in the ProfilePlayer
 class LandingPageVideoPlayer extends Component {
 
-  onMouseOverHandler() {
-    document.getElementById("play_img").style.visibility = "visible";
-  }
-  onMouseLeaveHandler() {
-    document.getElementById("play_img").style.visibility = "hidden";
-  }
-
   onClickHandler (e, movieProps) {
     e.preventDefault();
     this.props.movieSelected(movieProps)
   }
   handleMovieSynopsis(synopsis) {
-    return `${synopsis.substring(0, 160)}...`
+    return `${synopsis.substring(0, 60)}...`
   }
 
   renderImage(mov) {
@@ -31,8 +24,8 @@ class LandingPageVideoPlayer extends Component {
 
     if (movie.rating > 15) {
       return (
-        <CarouselItem  key={movie.image} onMouseEnter={this.onMouseOverHandler}>
-          <img id="play_img" src={playBtn} onMouseLeave={this.onMouseLeaveHandler} onClick={e => this.onClickHandler(e, movie)} />
+        <CarouselItem  key={movie.image} >
+         <div id="play_img"> <img src={playBtn} onClick={e => this.onClickHandler(e, movie)} /></div>
           <img id="carousel-img" onClick={e => this.onClickHandler(e, movie)} src={movie.image}/>
             <Carousel.Caption id="carousel-caption">
               <h2 id='title-caption'>{movie.title}</h2>
