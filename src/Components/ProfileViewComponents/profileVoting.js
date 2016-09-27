@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
-import { movieSelected } from '../../actions/index'
+import { movieSelected, getMovies } from '../../actions/index'
 
 class VotingComponent extends React.Component {
 
@@ -29,9 +29,10 @@ class VotingComponent extends React.Component {
   }
 
   render() {
-    const { allMovies } = this.props;
+    const { allMovies, getMovies } = this.props;
 
-    if (allMovies === null) {
+    if (allMovies.length === 0 || allMovies === null) {
+      getMovies()
       return <div>Loading...</div>
     }
     
@@ -52,7 +53,7 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, { movieSelected })(VotingComponent)
+export default connect(mapStateToProps, { movieSelected, getMovies })(VotingComponent)
 
             
 
