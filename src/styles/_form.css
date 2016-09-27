@@ -33,3 +33,9 @@ textarea {
   /* letter-spacing: 2px; */
   text-transform: uppercase;
 }
+
+.registerErrorMes {
+  margin: 15px auto;
+  width: 60%;
+  padding-left: 10px;
+}
