@@ -21,7 +21,7 @@ class VotingComponent extends Component {
     return (
       <section>
         <h3>Movies To Be Voted On</h3>
-        <section className="voting_container">
+        <section className="voting_container centerContainer">
           {this.state.allMovies.map(movie => this.renderImage(movie.m.properties))}
         </section>
       </section>
