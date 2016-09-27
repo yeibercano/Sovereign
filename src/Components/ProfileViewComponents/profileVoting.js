@@ -17,7 +17,7 @@ class VotingComponent extends React.Component {
       if(!movie.voters.includes(currentUser) && movie.category.length !== 0) {
         return (
           <section className="profile_tobevoted">
-            <img id="voting_image" src={movie.image} onClick={e => this.onClickHandler(e, movie)} />
+            <img id="voting_image" className="imagesFilter" src={movie.image} onClick={e => this.onClickHandler(e, movie)} />
             <section className="profile_voting_information">
               <h3>{movie.title}</h3>
               <h5>{movie.synopsis}</h5>
