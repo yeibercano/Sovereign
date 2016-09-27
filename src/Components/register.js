@@ -37,7 +37,9 @@ class CreateAccountScreen extends Component {
             <input type="password" {...password} placeholder ="Enter Password" />
             { password.touched && password.error && this.handleErrors(password.error) }
             <input type="password" {...confirmPassword} placeholder ="Re-enter Password" />
+             { confirmPassword.touched && confirmPassword.error && this.handleErrors(confirmPassword.error) }
             <input type="text" {...email} placeholder ="Enter E-mail" />
+             { email.touched && email.error && this.handleErrors(email.error) }
             <input type="text" {...website} placeholder="Enter Your Personal Website" />
             <input type="text" {...companyName} placeholder ="Enter The Name Of Your Company" />
             <input type="text" {...phoneNumber} placeholder="Enter Your Phone Number" />
@@ -51,6 +53,18 @@ class CreateAccountScreen extends Component {
 
 function validate(formProps) {
   const errors = {};
+  if (!formProps.email) {
+    errors.email = "Please enter email"
+  }
+
+  if (!formProps.password) {
+    errors.password = "Please enter password"
+  }
+
+  if (!formProps.confirmPassword) {
+    errors.confirmPassword = "Please enter password confirmation"
+  }
+
   if (formProps.password !== formProps.confirmPassword) {
     errors.password = 'Passwords must match'
   }
