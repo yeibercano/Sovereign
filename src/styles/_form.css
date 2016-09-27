@@ -39,6 +39,6 @@ textarea {
   width: 60%;
   padding-left: 10px;
   font-size: $small;
-  color: color(red lightness(40%));
+  color: $offRed;
 }
 
