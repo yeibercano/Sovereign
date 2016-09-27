@@ -12,11 +12,10 @@ class UploadVideo extends Component {
       <section className="upload_video_button">
         <form onSubmit={this._saveUpload}>
           <input 
-            className="movieUploadButton"
             type="submit" 
             name="submit"
             value="Upload Movie"
-            className="upload-button" />
+            className="upload-button movieUploadButton" />
         </form>
       </section>
     );
