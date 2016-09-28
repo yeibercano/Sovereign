@@ -49,7 +49,7 @@ article.landing_page_movieInfo {
 .videoListWrapper h2 { 
   text-align: center;
   font-size: responsive 16px 30px;
-  padding: 20px 0px;
+  padding: 40px 0px;
   color: white;
   font-family: raleway, sans-serif;
   font-weight: 600;
@@ -57,15 +57,14 @@ article.landing_page_movieInfo {
 }
 
 .feature_movie_information {
-
   & h3 {
-    color: $offWhite;
+    color: $white;
     text-align: center;
     padding: 20px;
     font-size: responsive 12px 17px;
   }
   & h5 {
-    color: rgb(100, 100, 100);
+    color: $offWhite;
     font-size: .7em;
     line-height: 1.3em;
   }
