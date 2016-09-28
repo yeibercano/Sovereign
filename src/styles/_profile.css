@@ -114,17 +114,12 @@ section.list-item-container {
   border-bottom: 1px solid #FFFFFF;
 }
 section.profile_tobevoted {
- /* border-bottom: 1px solid #7C7C7C;
-  margin-bottom: 50px;
-  height: 275px;
-  padding-left: 150px;*/
   border-bottom: 1px solid #7C7C7C;
-    /*height: 275px;*/
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    width: 45%;
-    margin-bottom: 30px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  margin-bottom: 30px;
 }
 .profile_voting_information {
   color: #FFFFFF;
@@ -135,7 +130,7 @@ section.profile_tobevoted {
   margin-bottom: 30px;
   & h5 {
     color: $offWhite;
-    font-size: $small;
+    font-size: .9em;
     line-height: 1.3em;
   }
 }
