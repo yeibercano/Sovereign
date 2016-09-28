@@ -40,7 +40,7 @@ section.carousel-div{
   cursor: pointer;
   top: 9%;
   z-index: 20;
-  opacity: .5;
+  opacity: .8;
 
   & img {
     opacity: .5;
