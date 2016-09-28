@@ -61,11 +61,11 @@ article.landing_page_movieInfo {
     color: $white;
     text-align: center;
     padding: 20px;
-    font-size: responsive 12px 17px;
+    font-size: responsive 18px 20px;
   }
   & h5 {
     color: $offWhite;
-    font-size: .7em;
+    font-size: responsive 14px 16px;
     line-height: 1.3em;
   }
 }
