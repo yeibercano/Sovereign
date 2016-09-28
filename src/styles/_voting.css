@@ -111,3 +111,20 @@ section.voting_player_container {
   color: white;
 }
 
+.voteOnPlayIcon {
+  position: absolute;
+  width: 20%;
+  left: 40%;
+  top: 24%;
+  z-index: 20;
+  opacity: .8;
+  cursor: pointer;
+  & img {
+    width: 100%;
+  }
+}
+
+.images {
+  position: relative;
+}
+
