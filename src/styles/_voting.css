@@ -3,13 +3,18 @@ section.voting_page_container {
 }
 section.parent_voting_container {
   border-top: 1px solid #316DAA;
+  display: flex;
+  flex-direction: column;
 }
 section.voting_container{
-  height: 550px;
+  /*height: 550px;
   width: 1160px;
   overflow: scroll;
   position: relative;
-  margin: 50px auto;
+  margin: 50px auto;*/
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 section.voting_container h4{
   color: #FFFFFF;
@@ -30,13 +35,13 @@ section.voting_container h3{
   color: #FFFFFF;
   text-align: center;
   padding: 20px; 
-  font-size: 35px;
+  font-size: responsive 14px 25px;
 }
 #profile_voting_list_title {
   color: #FFFFFF;
   padding: 20px;
-  font-size: 35px;
-  margin-top: 50px;
+  font-size: responsive 16px 35px;
+  margin: 20px 0px;
   text-align: center;
 }
 .vote_title {
@@ -71,12 +76,6 @@ section.voting_container h3{
   float: left;
   margin-right: 25px;
 }
-
-#voting_image {
-  height: 200px;
-  border-radius: 10px;
-  cursor: pointer; 
-}
 #voting_image_viewer img{
   height: 250px;
   /*margin: 20px 0px 0px 15px;*/
@@ -89,9 +88,11 @@ section.stars{
   margin-top: 40px;
 }
 #voting_image {
-  height: 200px;
-  border-radius: 10px;
-  opacity: .8;
+ /*height: 200px; */
+    border-radius: 10px;
+    opacity: .8;
+    cursor: pointer;
+    width: 100%;
 }
 #voting_image img :hover {
   height: 200px;
@@ -109,3 +110,4 @@ section.voting_player_container {
   font-size: 25px;
   color: white;
 }
+
