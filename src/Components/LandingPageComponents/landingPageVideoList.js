@@ -14,10 +14,13 @@ class LandingPageVideoList extends Component {
     if (movieInfo.rating > 2 && movieInfo.rating < 15) {
       return (
         <article key={movieInfo.image} onClick={() => this.handleMovie(movieInfo)} className="landing_page_movieInfo">
-          <div className="featurePlayIcon"> <img src={playBtn} onClick={e => this.onClickHandler(e, movie)} /></div>
-          <a href={() => this.handleMovie(movieInfo)}>
-            <img className="landing_page_movieInfo_image imagesFilter" src={movieInfo.image} /> 
-          </a>
+          <div className="featurePlayIcon"> <img src={playBtn} onClick={e => this.handleMovie(movieInfo)} /></div>
+          <img className="landing_page_movieInfo_image imagesFilter" onClick={e => this.handleMovie(movieInfo)} src={movieInfo.image} /> 
+
+          <section className="feature_movie_information">
+            <h3>{movieInfo.title}</h3>
+            <h5>{movieInfo.synopsis}</h5>
+          </section>
         </article>
       );
     }
