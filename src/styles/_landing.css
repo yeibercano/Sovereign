@@ -2,17 +2,29 @@
   height: 100%;
   flex: 1;
 }
-section.landing_page {
+
+.landing_page {
   overflow: scroll;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
+
+.landing_page_movieInfo img {
+  width: 100%;
+  border-radius: 5px;
+}
+
 section.landing_page h2 {
   text-align: center;
   color: #FFFFFF;
 }
+
 article.landing_page_movieInfo {
   display: inline-block;
   margin-top: 5px;
   /*overflow: scroll;*/
+  width: 24%;
 }
 
 .landing_page_movieInfo_image {
@@ -23,14 +35,13 @@ article.landing_page_movieInfo {
   /*opacity:.8;*/
 }
 .landing_page_movieInfo {
-  transform: scale(.9);
   position: relative;
 }
 
-.landing_page_movieInfo :hover {
+/*.landing_page_movieInfo :hover {
   transform: scale(1.1);
   transition: all .2s ease-in-out;
-}
+}*/
 .videoListWrapper { 
     width: 80%;
     margin: 0 auto;
