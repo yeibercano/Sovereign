@@ -4,7 +4,11 @@
     flex-wrap: wrap;
   }
   article.landing_page_movieInfo {
-    width: 50%;
+    width: 47%;
+    margin-bottom: 30px;
+  }
+  .featurePlayIcon {
+    top: 13%;
   }
   /* input placeholder */
   ::-webkit-input-placeholder { /* WebKit browsers */
@@ -29,6 +33,10 @@
   }
   article.landing_page_movieInfo {
     width: 100%;
+    margin-bottom: 40px;
+  }
+  .featurePlayIcon {
+    top: 16%;
   }
   /* input placeholder */
   ::-webkit-input-placeholder { /* WebKit browsers */
