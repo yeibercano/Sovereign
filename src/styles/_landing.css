@@ -55,3 +55,18 @@ article.landing_page_movieInfo {
   font-weight: 600;
   text-transform: uppercase;
 }
+
+.feature_movie_information {
+
+  & h3 {
+    color: $offWhite;
+    text-align: center;
+    padding: 20px;
+    font-size: responsive 12px 17px;
+  }
+  & h5 {
+    color: rgb(100, 100, 100);
+    font-size: .7em;
+    line-height: 1.3em;
+  }
+}
