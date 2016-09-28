@@ -55,4 +55,10 @@
   aside.account_information {
     display: none;
   }
+  section.profile_tobevoted {
+    width: 100%;
+  }
+  .profile_voting_information h5 {
+    font-size: 1.1em;
+  }
 }
