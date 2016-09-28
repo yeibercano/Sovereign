@@ -1,23 +1,19 @@
 section.profile_container{
-  /*position: relative;
-  height: 1100px;
-  width: 100%;*/
   width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 aside.account_information{
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #316daa), color-stop(35%, #316DAA), color-stop(77%, #316daa), color-stop(86%, #316DAA), color-stop(100%, #316daa));
   width: 25%;
-  padding: 30px;
   box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
   color: white;
   margin-right: 10px;
+  padding-top: 30px;
 }
 #account_information_gravatar_container {
-  border-bottom: 1px solid $white;
-  padding: 30px 0px;
+  border-bottom: 1px solid white;
+  padding: 30px;
   margin-bottom: 20px;
   & img {
     width: 100%;
@@ -31,7 +27,7 @@ aside.account_information{
   border-bottom: 2px solid $white;
 }
 #account_information_title {
-  font-size: responsive 12px 30px;
+  font-size: responsive 12px 22px;
 }
 #full_name{
   display: block;
@@ -43,13 +39,7 @@ aside.account_information h4 {
   font-size: responsive 10px 16px;
 }
 section.profile_video_player {
-/*  display: inline-block;
-  position: absolute;
-  margin-top: 40px;
-  left: 30%;*/
-
   margin-top: 0px;
-  /*width: 100%;*/
   flex: 1;
 }
 section.profile_video_player video {
@@ -124,17 +114,29 @@ section.list-item-container {
   border-bottom: 1px solid #FFFFFF;
 }
 section.profile_tobevoted {
-  border-bottom: 1px solid #7C7C7C;
+ /* border-bottom: 1px solid #7C7C7C;
   margin-bottom: 50px;
   height: 275px;
-  padding-left: 150px;
+  padding-left: 150px;*/
+  border-bottom: 1px solid #7C7C7C;
+    /*height: 275px;*/
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    margin-bottom: 30px;
 }
 .profile_voting_information {
-  display: inline-block;
-  position: absolute;
   color: #FFFFFF;
-  height: 200px;
-  width: 400px;
-  margin-left: 50px;
-
+  height: auto;
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  & h5 {
+    color: $offWhite;
+    font-size: $small;
+    line-height: 1.3em;
+  }
 }
+
