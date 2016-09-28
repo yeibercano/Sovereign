@@ -13,7 +13,7 @@ class Profile extends Component {
   render() {
     const { userInfo } = this.props
     return (
-      <section className="profileView">
+      <section className="profileView centerContainer">
         <section className="profile_container">
           <ProfileInfo userInfo = {userInfo} />
           <ProfileVideoPlayer userInfo = {userInfo} />
