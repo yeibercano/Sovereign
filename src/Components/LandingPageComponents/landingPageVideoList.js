@@ -9,17 +9,20 @@ class LandingPageVideoList extends Component {
   handleMovie(movie) {
     this.props.movieSelected(movie)
   }
+  handleMovieSynopsis(synopsis) {
+    return `${synopsis.substring(0, 80)}...`
+  }
 
   movieInfo(movieInfo) {
     if (movieInfo.rating > 2 && movieInfo.rating < 15) {
       return (
-        <article key={movieInfo.image} onClick={() => this.handleMovie(movieInfo)} className="landing_page_movieInfo">
+        <article key={movieInfo.image}  className="landing_page_movieInfo">
           <div className="featurePlayIcon"> <img src={playBtn} onClick={e => this.handleMovie(movieInfo)} /></div>
           <img className="landing_page_movieInfo_image imagesFilter" onClick={e => this.handleMovie(movieInfo)} src={movieInfo.image} /> 
 
           <section className="feature_movie_information">
             <h3>{movieInfo.title}</h3>
-            <h5>{movieInfo.synopsis}</h5>
+            <h5>{this.handleMovieSynopsis(movieInfo.synopsis)}</h5>
           </section>
         </article>
       );
