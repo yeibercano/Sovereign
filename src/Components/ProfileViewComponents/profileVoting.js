@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { movieSelected, getMovies } from '../../actions/index'
+import playBtn from '../../styles/assets/play-btn-sm.png'
 
 class VotingComponent extends React.Component {
 
@@ -17,7 +18,10 @@ class VotingComponent extends React.Component {
       if(!movie.voters.includes(currentUser)) {
         return (
           <section className="profile_tobevoted">
-            <img id="voting_image" className="imagesFilter" src={movie.image} onClick={e => this.onClickHandler(e, movie)} />
+            <div className="images imagesFilter"> 
+              <div className="voteOnPlayIcon"> <img src={playBtn} onClick={e => this.onClickHandler(e, movie)} /></div>
+              <div><img id="voting_image" src={movie.image} onClick={e => this.onClickHandler(e, movie)} /></div>
+            </div>
             <section className="profile_voting_information">
               <h3>{movie.title}</h3>
               <h5>{movie.synopsis}</h5>
