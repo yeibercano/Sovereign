@@ -16,17 +16,30 @@ body{
 	min-height: 100vh;
 }
 
+.centerContainer {
+	width: 80%;
+	margin: 0px auto;
+}
+
+.flexContainerRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.flexContainerRow {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .imagesFilter {
-	filter: grayscale(.6);
+  filter: grayscale(.6);
   &:hover {
     filter: grayscale(0);
   }
 }
 
-.centerContainer {
-	width: 80%;
-	margin: 0px auto;
-}
 
 .movieUploadButton {
   display: block;
