@@ -9,25 +9,21 @@ body{
   background-color: #000000;
   font-family: 'Playfair Display', serif;
 }
-
 .appContainer {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
 }
-
 .centerContainer {
 	width: 80%;
 	margin: 0px auto;
 }
-
 .flexContainerRow {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-
-.flexContainerRow {
+.flexContainerColumn {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -39,7 +35,6 @@ body{
     filter: grayscale(0);
   }
 }
-
 
 .movieUploadButton {
   display: block;

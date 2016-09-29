@@ -128,6 +128,7 @@ section.profile_tobevoted {
   display: flex;
   flex-direction: column;
   margin-bottom: 30px;
+  
   & h5 {
     color: $offWhite;
     font-size: .9em;
