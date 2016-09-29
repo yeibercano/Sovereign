@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { movieSelected } from '../actions/index'
+import { truncate } from '../utilities/functions'
 
 class Search extends Component{
   movieSelected(movieSelected) {
@@ -9,12 +10,13 @@ class Search extends Component{
 
   displayResult(result) {
     return (
-      <section key={result.title} onClick={(movieSelected) => this.movieSelected(result)} className="searchResults">
+      <section key={result.title} className="resultsItem flexContainerColumn">
+        <section className="search-item-container" >
+          <img className="searchResultsImg imagesFilter" id="search_image_result" src={result.image} onClick={(movieSelected) => this.movieSelected(result)} />
+        </section>
         <section className="search-item-title-container" >
           <h3 id="search_title">{result.title}</h3>
-        </section>
-        <section className="search-item-container" >
-          <img className="searchResultsImg imagesFilter" id="search_image_result" src={result.image} />
+          <h5 >{truncate(result.synopsis)}</h5>
         </section>
       </section>
     );
@@ -27,11 +29,11 @@ class Search extends Component{
     }
 
     return (
-      <section>
-        <section className="result_header">
-          <h1>Results For Your Search: </h1>
+      <section id="resultsContainer">
+        <h1 className="result_header">Results For Your Search: </h1>
+        <section className="resultsList centerContainer flexContainerRow">
+          {sResults.map(result => this.displayResult(result.m.properties))}
         </section>
-        {sResults.map(result => this.displayResult(result.m.properties))}
       </section>
     );
   }
