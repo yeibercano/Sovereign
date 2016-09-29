@@ -1,28 +1,21 @@
-.result_header{
-  height: 90px;
-  width: 100%;
+.result_header {
   border-bottom: 1px solid $white;
   border-top: 10px solid $white;
-}
-.result_header h1 {
-  margin-top: 20px;
-  font-size: 40px;
+  padding: 20px 0px;
+  font-size: $fontHeading;
   color: $white;
   text-align: center;
   text-transform: lowercase;
 }
-.searchResults {
-  display: block;
-  width: 80%;
-  margin: 0 auto;
-}
-.searchResultsImg {
-  display: block;
-  margin:60px auto;
-  border-radius: 175px;
-  border: 8px solid $white;
-  cursor: pointer;
-  height: 350px;
+.resultsItem {
+  width: 45%;
+  margin-bottom: 30px;
+
+  & img {
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+  }
 }
 .search-item-container {
   border-radius: 550px;
