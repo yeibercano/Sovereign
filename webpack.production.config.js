@@ -93,13 +93,13 @@ var config = {
     }),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
-    // new webpack.optimize.UglifyJsPlugin({
-    //   minimize: true,
-    //   mangle: false,
-    //   compress: {
-    //     warnings: false
-    //   }
-    // }),
+    new webpack.optimize.UglifyJsPlugin({
+      minimize: true,
+      mangle: false,
+      compress: {
+        warnings: false
+      }
+    }),
     new ManifestPlugin()
   ],
 };
