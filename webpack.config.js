@@ -46,7 +46,6 @@ const config = {
         loader: 'babel-loader',
         exclude: '/node_modules'
       },
-      //This converts our .css into JS
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract('style', ['css','postcss'])
@@ -73,7 +72,8 @@ const config = {
   //Hot Replacement plugin
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new ExtractTextPlugin('main.css', {allChunks: true})
+    new ExtractTextPlugin('main.css')
+
   ]
 };
 
