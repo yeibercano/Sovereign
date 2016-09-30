@@ -2,15 +2,6 @@
   padding-top: 2.5em;
 }
 
-.result_header {
-  border-bottom: 1px solid $white;
-  border-top: 10px solid $white;
-  padding: 20px 0px;
-  font-size: $fontHeading;
-  color: $white;
-  text-align: center;
-  text-transform: lowercase;
-}
 .resultsItem {
   width: 45%;
   margin-bottom: 1.8em;
