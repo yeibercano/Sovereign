@@ -16,7 +16,7 @@ section.voting_container{
   flex-wrap: wrap;
   justify-content: space-between;
 }
-section.voting_container h4{
+section.voting_container h4 {
   color: #FFFFFF;
   /*border-bottom: 1px solid #242632;*/
   height: 275px;
@@ -31,7 +31,7 @@ section.vote_contain {
   padding: 40px 30px 10px 10px; 
   height: 200px;
 }
-section.voting_container h3{
+section.voting_container h3 {
   color: #FFFFFF;
   text-align: center;
   padding: 20px; 
