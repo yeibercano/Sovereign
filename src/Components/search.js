@@ -32,8 +32,8 @@ class Search extends Component{
 
     return (
       <section id="resultsContainer">
-        <h1 className="result_header">Results For Your Search: </h1>
-        <section className="resultsList centerContainer flexContainerRow">
+        <h1 className="result_header">we found {sResults.length} movies:</h1>
+        <section id="resultsList" className="centerContainer flexContainerRow">
           {sResults.map(result => this.displayResult(result.m.properties))}
         </section>
       </section>
