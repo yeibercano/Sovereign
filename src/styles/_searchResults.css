@@ -15,18 +15,22 @@
   width: 45%;
   margin-bottom: 1.8em;
   border-bottom: 1px solid #7c7c7c;
+}
 
+.resultsPlayIcon{
+  position: absolute;
+  width: 20%;
+  left: 40%;
+  top: 24%;
+  z-index: 20;
+  opacity: .8;
+  cursor: pointer;
   & img {
     width: 100%;
-    border-radius: 10px;
-    cursor: pointer;
   }
 }
-.search-item-container {
-  border-radius: 550px;
-  /*width: 100%;*/
-}
-.search-item-title-container {
+
+.resultsTextContainer {
   color: $white;
 
   & h3 {
