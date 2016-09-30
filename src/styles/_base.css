@@ -38,6 +38,16 @@ body{
   justify-content: space-between;
 }
 
+.containerHeader {
+  border-bottom: 1px solid $white;
+  border-top: 10px solid $white;
+  padding: 20px 0px;
+  font-size: $fontHeading;
+  color: $white;
+  text-align: center;
+  text-transform: lowercase;
+}
+
 .imagesFilter {
   filter: grayscale(.6);
   &:hover {
