@@ -1,3 +1,7 @@
+.resultsList {
+  padding-top: 2.5em;
+}
+
 .result_header {
   border-bottom: 1px solid $white;
   border-top: 10px solid $white;
@@ -9,7 +13,8 @@
 }
 .resultsItem {
   width: 45%;
-  margin-bottom: 30px;
+  margin-bottom: 1.8em;
+  border-bottom: 1px solid #7c7c7c;
 
   & img {
     width: 100%;
@@ -22,11 +27,19 @@
   /*width: 100%;*/
 }
 .search-item-title-container {
-  display: block;
-  color: #FFFFFF;
-  text-align: center;
-  text-decoration: underline;
-  font-size: 30px;
-  margin-top: 30px;
+  color: $white;
+
+  & h3 {
+    text-align: center;
+    padding: 20px; 
+    font-size: responsive 14px 25px;
+  }
+
+  & h5 {
+    color: $offWhite;
+    font-size: .9em;
+    line-height: 1.3em;
+    margin-bottom: 1.8em
+  }
 }
 
