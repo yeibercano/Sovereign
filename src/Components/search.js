@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { movieSelected } from '../actions/index'
 import { truncate } from '../utilities/functions'
+import playBtn from '../styles/assets/play-btn-sm.png'
 
 class Search extends Component{
   movieSelected(movieSelected) {
@@ -11,10 +12,11 @@ class Search extends Component{
   displayResult(result) {
     return (
       <section key={result.title} className="resultsItem flexContainerColumn">
-        <section className="search-item-container" >
-          <img className="searchResultsImg imagesFilter" id="search_image_result" src={result.image} onClick={(movieSelected) => this.movieSelected(result)} />
+        <section className="images imagesFilter">
+          <div className="resultsPlayIcon"> <img src={playBtn} onClick={(movieSelected) => this.movieSelected(result)} /></div>
+          <img className="searchResultsImg" id="search_image_result" src={result.image} onClick={(movieSelected) => this.movieSelected(result)} />
         </section>
-        <section className="search-item-title-container" >
+        <section className="resultsTextContainer" >
           <h3 id="search_title">{result.title}</h3>
           <h5 >{truncate(result.synopsis)}</h5>
         </section>
