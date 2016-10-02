@@ -18,7 +18,7 @@ class Search extends Component{
         </section>
         <section className="resultsTextContainer" >
           <h3 id="search_title">{result.title}</h3>
-          <h5 >{truncate(result.synopsis)}</h5>
+          <h5 >{truncate(result.synopsis, 160)}</h5>
         </section>
       </section>
     );
