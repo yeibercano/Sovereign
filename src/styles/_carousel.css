@@ -1,7 +1,12 @@
+.carousel-div{
+  border-bottom: 5px solid $mainColor;
+}
+
 #carousel-img{
     margin: 0px auto;
-    width: 75%;
+    width: 80%;
 }
+
 #carousel-caption{
   background-color: black;
   border-radius: 10px;
@@ -51,6 +56,3 @@
   }
 }
 
-section.carousel-div{
-  border-bottom: 5px solid $mainColor;
-}
