@@ -12,7 +12,7 @@ class ViewingPage extends Component {
     return (
       <section id="viewingContainer" className="flexContainerColumn">
         <h1 className="containerHeader">{selectedMovie.title}</h1>
-        <section id="movieContainer" className="centerContainer">
+        <section id="movieContainer" className="centerContainer flexContainerColumn">
           <section id="player">
             <video className="viewing_video" autoPlay controls src={selectedMovie.video} type="video/mp4" />
           </section>  
