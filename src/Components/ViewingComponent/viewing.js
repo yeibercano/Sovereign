@@ -16,12 +16,12 @@ class ViewingPage extends Component {
           <section id="player">
             <video className="viewing_video" autoPlay controls src={selectedMovie.video} type="video/mp4" />
           </section>  
-          <aside id="movieInfoContainer" className="viewing_info movieInfoContainer">
-            <section id="poster_info">
+          <aside id="movieInfoContainer" className="flexContainerRow">
+            <section id="poster_info" className="movieImage">
               <img src={selectedMovie.image} />
             </section>
-            <section id="movie_info">
-              <h2>{selectedMovie.title}</h2>
+            <section id="movie_info" className="flexContainerColumn movieInfo">
+              <h2 className="movieHeader">{selectedMovie.title}</h2>
               <section id="sub_movie_info">
                 <section id="synopsis">
                   <h4>{selectedMovie.synopsis}</h4>
