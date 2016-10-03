@@ -49,8 +49,10 @@ body{
 }
 
 .movieHeader {
-  font-size: responsive 14px 18px;
+  font-size: responsive 20px 30px;
   color: $white;
+  padding: 20px;
+  text-align: center;
 }
 
 .imagesFilter {
