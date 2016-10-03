@@ -35,7 +35,7 @@ body{
 .flexContainerColumn {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /*justify-content: space-between;*/
 }
 
 .containerHeader {
@@ -46,6 +46,11 @@ body{
   color: $white;
   text-align: center;
   text-transform: lowercase;
+}
+
+.movieHeader {
+  font-size: responsive 14px 18px;
+  color: $white;
 }
 
 .imagesFilter {
