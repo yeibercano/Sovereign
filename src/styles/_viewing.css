@@ -10,6 +10,9 @@ video.viewing_video {
 
 #synopsis {
   margin-bottom: 15px;
+  & h4 {
+    line-height: 1.3em;
+  }
 }
 
 .movieImageContainer {
@@ -25,7 +28,7 @@ video.viewing_video {
   color: $offWhite;
   font-size: .9em;
   line-height: 1.3em;
-  margin-bottom: 1.8em
+  margin-bottom: 1.8em;
 }
 
 .movieSubInfo {
@@ -35,4 +38,5 @@ video.viewing_video {
 .movieSubtitle {
   font-weight: bold;
   color: $white;
+  line-height: 1.2em;
 }
