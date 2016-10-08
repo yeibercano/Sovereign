@@ -5,6 +5,7 @@ $offBlue: #71a7dd;
 $white: white;
 $offRed: color(red lightness(40%));
 $offWhite: color(white lightness(60%));
+$blackBackground: #222;
 
 /* fonts */
 $brandFont: bebas-neue, sans-serif;
