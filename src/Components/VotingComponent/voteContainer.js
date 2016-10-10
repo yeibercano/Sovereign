@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import VoteVideoPlayer from './votingPlayer';
 import VoteVideoList from './votingVideoList';
-import Rating from './rating';
 import { connect } from 'react-redux'
 
 // this is the parent component 
@@ -14,12 +13,9 @@ class VoteContainer extends Component {
     }
 
     return (
-      <section className="voting_page_container">
+      <section className="flexContainerRow centerContainer">
+        <VoteVideoList movie={movieSelected} />
         <VoteVideoPlayer movie= {movieSelected.video} title = {movieSelected.title}/>
-        <VoteVideoList movie={ movieSelected } />
-        <section id="star-rating" style={{visibility: "hidden"}}>
-          <Rating  />
-        </section>
       </section>
     );
   }
