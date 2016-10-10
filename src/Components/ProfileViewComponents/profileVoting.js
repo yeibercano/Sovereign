@@ -22,7 +22,7 @@ class VotingComponent extends React.Component {
               <div className="voteOnPlayIcon"> <img src={playBtn} onClick={e => this.onClickHandler(e, movie)} /></div>
               <div><img id="voting_image" src={movie.image} onClick={e => this.onClickHandler(e, movie)} /></div>
             </div>
-            <section className="profile_voting_information">
+            <section className="movieInformation">
               <h3>{movie.title}</h3>
               <h5>{movie.synopsis}</h5>
             </section>
