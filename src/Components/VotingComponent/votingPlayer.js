@@ -9,8 +9,8 @@ class VoteVideoPlayer extends Component {
   movieEnded (e, movie){
     e.preventDefault();
     alert("You may now vote on this movie");
-    let what = document.getElementById("star-rating")
-    what.style.visibility= "visible"
+    let allowVoting = document.getElementById("star-rating")
+    allowVoting.style.visibility= "visible"
     return 
   }
 
