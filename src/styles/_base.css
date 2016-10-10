@@ -60,11 +60,22 @@ body{
   display: flex;
   flex-direction: column;
   margin-bottom: 30px;
+
+  & h3 {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    font-size: responsive 18px 20px;
+  }
   
   & h5 {
     color: $offWhite;
     font-size: .9em;
     line-height: 1.3em;
+  }
+
+  & span {
+    color: $white;
   }
 }
 
