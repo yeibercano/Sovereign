@@ -7,14 +7,14 @@ const VotingVideoList = ({ movie }) => {
       <section id="voting_image_viewer">
         <img src={movie.image} />
       </section>
-      <section id="voting_information_viewer" >
-        <h2>{movie.title}</h2>
-      <section id="synopsis">
-        <h5>{movie.synopsis}</h5>
-      </section>
-        <h5>Actors:{movie.actors}</h5>
-        <h5>Director: {movie.director}</h5>
-        <h5>Released:{movie.year}</h5>
+      <section id="voting_information_viewer" className="movieInformation">
+        <h3>{movie.title}</h3>
+        <section id="synopsis">
+          <h5>{movie.synopsis}</h5>
+        </section>
+        <h5><span>Actors:</span> {movie.actors}</h5>
+        <h5><span>Director:</span> {movie.director}</h5>
+        <h5><span>Released:</span> {movie.year || "N/A"}</h5>
       </section>
       <section id="star-rating" style={{visibility: "hidden"}}>
         <Rating  />
