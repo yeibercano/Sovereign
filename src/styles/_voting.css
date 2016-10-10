@@ -17,7 +17,7 @@ section.voting_container{
   justify-content: space-between;
 }
 section.voting_container h4 {
-  color: #FFFFFF;
+  color: $white;
   /*border-bottom: 1px solid #242632;*/
   height: 275px;
   width: 100%;
@@ -26,21 +26,17 @@ section.voting_container h4 {
 }
 section.vote_contain {
   width: 35%;
-/*  margin-top: 20px;
-  margin-left: 10px;
-  border-top: 3px solid #FFFFFF;
-  padding: 40px 30px 10px 10px; 
-  height: 200px;*/
 }
+
 section.voting_container h3 {
-  color: #FFFFFF;
+  color: $white;
   text-align: center;
   padding: 20px; 
   font-size: responsive 14px 25px;
 }
 
 #profile_voting_list_title {
-  color: #FFFFFF;
+  color: $white;
   padding: 20px;
   font-size: responsive 16px 35px;
   margin: 20px 0px;
@@ -50,7 +46,7 @@ section.voting_container h3 {
 .vote_title {
   width: 100%;
   height: 150px;
-  border-top: 3px solid #FFFFFF;
+  border-top: 3px solid $white;
   z-index: 1;
 }
 
@@ -59,18 +55,18 @@ section.voting_container h3 {
 }
 
 #voting_information_viewer h2{
-  color: #FFFFFF;
+  color: $white;
   font-size: 30px;
   margin-bottom: 10px;
   text-decoration: underline;
 }
 
 #voting_information_viewer h5{
-  color: #FFFFFF;
+  color: $white;
   font-size: 20px;
 }
 .vote_title h1 {
-  color: white;
+  color: $white;
   text-align: center;
 }
 
@@ -89,7 +85,7 @@ section.voting_player_container {
 #voting_information {
   display: block;
   font-size: 25px;
-  color: white;
+  color: $white;
 }
 
 .voteOnPlayIcon {
