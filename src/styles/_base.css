@@ -74,7 +74,11 @@ body{
   padding-left: 10px;
   color: white;
 
-	  &:hover {
-	    background-color: $mainColor;
-	  }
+  &:hover {
+    background-color: $mainColor;
+  }
+}
+
+img {
+  width: 100%;
 }
