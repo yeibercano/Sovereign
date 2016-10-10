@@ -55,6 +55,19 @@ body{
   text-align: center;
 }
 
+.movieInformation {
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  
+  & h5 {
+    color: $offWhite;
+    font-size: .9em;
+    line-height: 1.3em;
+  }
+}
+
 .imagesFilter {
   filter: grayscale(.6);
   &:hover {
