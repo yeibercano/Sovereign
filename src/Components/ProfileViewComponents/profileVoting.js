@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { movieSelected, getMovies } from '../../actions/index'
 import playBtn from '../../styles/assets/play-btn-sm.png'
+import Loading from '../loading'
 
 class VotingComponent extends React.Component {
 
@@ -37,7 +38,7 @@ class VotingComponent extends React.Component {
 
     if (allMovies.length === 0 || allMovies === null) {
       getMovies()
-      return <div>Loading...</div>
+      return <Loading />
     }
     
     return (
