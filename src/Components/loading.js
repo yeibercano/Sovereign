@@ -1,10 +1,18 @@
 import React, {Component} from 'react';
-import Loading from 'react-loading';
+import Load from 'react-loading';
 
-const Load = () => {
+const Loading = () => {
   return (
-    <Loading type='spinningBubbles' color='white' height='800' width='800' />
+    <div className="centerContainer flexContainerRow loadingAnimation">
+      <div>
+        <Load type='spin' 
+              color='white' 
+              width="100%"
+        />
+        <h1 className="loadingTitle">Loading...</h1>  
+      </div>
+    </div>
   );
 } 
 
-export default Load
+export default Loading
