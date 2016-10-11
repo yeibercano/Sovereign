@@ -26,13 +26,20 @@ class Search extends Component{
 
   render () {
     const { sResults } = this.props;
+    let movie = " movies:"
+
     if (sResults.length === 0) {
       return <section className="search_not_found">Search results not found!</section>
+    } 
+
+    if (sResults.length === 1) {
+      movie = " movie:"
     }
+
 
     return (
       <section id="resultsContainer">
-        <h1 className="containerHeader">we found {sResults.length} movies:</h1>
+        <h1 className="containerHeader">we found {sResults.length} {movie}</h1>
         <section id="resultsList" className="centerContainer flexContainerRow">
           {sResults.map(result => this.displayResult(result.m.properties))}
         </section>
