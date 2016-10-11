@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Loading from '../loading'
 
 class VotingComponent extends Component {
 
@@ -15,7 +16,7 @@ class VotingComponent extends Component {
   render () {
     const { allMovies } = this.props;
     if (allMovies === null) {
-      return <div>Loading...</div>
+      return <Loading />
     }
 
     return (
