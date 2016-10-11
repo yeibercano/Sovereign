@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Load from 'react-loading'
+import Loading from '../loading'
 import { connect } from 'react-redux'
 import { movieSelected } from '../../actions/index'
 import playBtn from '../../styles/assets/play-btn-sm.png'
@@ -31,7 +31,10 @@ class LandingPageVideoList extends Component {
 
   render() {
     const { allMovies } = this.props;
-    if (allMovies === null) return <Load />
+    if (allMovies === null) {
+      console.log('loading should have been called')
+      return <Loading />
+    }
 
     return (
       <div>
