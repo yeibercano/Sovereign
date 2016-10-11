@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import VoteVideoPlayer from './votingPlayer';
 import VoteVideoList from './votingVideoList';
 import { connect } from 'react-redux'
+import Loading from '../loading'
+
 
 // this is the parent component 
 class VoteContainer extends Component {
@@ -9,7 +11,7 @@ class VoteContainer extends Component {
    render() {
     const { movieSelected } = this.props;
     if (movieSelected === null) {
-      return <div>Loading...</div>
+      return <Loading />
     }
 
     return (
