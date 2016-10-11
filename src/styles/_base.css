@@ -89,3 +89,12 @@ body{
 img {
   width: 100%;
 }
+
+/* LOADING ANIMATION */
+.loadingAnimation {
+  margin-top: 15%;
+}
+.loadingTitle {
+  color: $white;
+  padding-top: 3em;
+}
