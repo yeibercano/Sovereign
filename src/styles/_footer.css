@@ -1,15 +1,17 @@
-footer{
+footer {
   width:100%;
   height:25px;
 }
+
 .footerText {
   color: $white;
   font-size: $small;
 }
+
 .footerBackground {
-    height: 4em;
-    margin-top: 2em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  height: 4em;
+  margin-top: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

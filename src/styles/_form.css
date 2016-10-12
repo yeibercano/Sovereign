@@ -10,6 +10,7 @@ input {
   padding-left: 10px;
   color: white;
 }
+
 textarea {
   display: block;
   border-radius: 5px;
@@ -22,15 +23,13 @@ textarea {
   padding-left: 10px;
   color: white;
 }
-.create_account_screen {
-}
+
 .create_account_form h1 {
   text-align: center;
   color: white;
   font-size: 25px;
   padding-top: 20px;
   font-family: raleway, sans-serif;
-  /* letter-spacing: 2px; */
   text-transform: uppercase;
 }
 

@@ -1,16 +1,18 @@
-section.profile_container{
+section.profile_container {
   width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-aside.account_information{
+
+aside.account_information {
   width: 25%;
   box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
   color: white;
   margin-right: 10px;
   padding-top: 30px;
 }
+
 #account_information_gravatar_container {
   border-bottom: 1px solid white;
   padding: 30px;
@@ -20,28 +22,34 @@ aside.account_information{
     height: 100%;
   }
 }
+
 #account_information_gravatar {
   border: 8px solid $white;
   border-radius: 200px;
   margin: 10px 0px;
   border-bottom: 2px solid $white;
 }
+
 #account_information_title {
   font-size: responsive 12px 22px;
 }
+
 #full_name{
   display: block;
 }
+
 aside.account_information h4 {
   display: inline-block;
   margin-bottom: 20px;
   border-bottom: $white;
   font-size: responsive 10px 16px;
 }
+
 section.profile_video_player {
   margin-top: 0px;
   flex: 1;
 }
+
 section.profile_video_player video {
   width: 100%;
  /* width: 900px;
@@ -49,32 +57,38 @@ section.profile_video_player video {
   margin-left: -30px;
   margin-bottom: 5px; */
 }
+
 section.profile_video_player h1 {
   text-align: center;
   color: white;
 }
+
 #not_upload {
   margin-top: 70px;
   text-align: center;
   color: #FFFFFF;
   font-size: 30px;
 }
+
 .upload-button {
   width: 100%;
   color: $white;
   border: 1px solid $white;
   margin-bottom: 100px;
 }
+
 section.upload_video_button {
   /*position: absolute;
   right: 36%;
   bottom: 0%;*/
 }
+
 .upload_list_title {
   margin-top: 25px;
   color: white;
   font-size: 30px;
 }
+
 .profile_video_list {
 /*  height: 300px;
   width: 850px;
@@ -83,6 +97,7 @@ section.upload_video_button {
   overflow: hidden;*/
   margin-top: 15px;
 }
+
 section.profile_video_list {
   background-color: #22222;
   height: 340px;
@@ -91,17 +106,20 @@ section.profile_video_list {
   padding: 10px;
   overflow: hidden;
 }
+
 section.profile_video_list h1 {
   text-align: center;
   margin-bottom: 20px;
   color: white;
 }
+
 section.profile_video_list h3 {
   display: inline;
   margin-left: 10px;
   cursor: pointer;
   color: white;
 }
+
 section.profile_video_list img {
   display:inline-block;
   height:150px;
@@ -110,9 +128,11 @@ section.profile_video_list img {
   overflow: hidden;
   cursor: pointer;
 }
+
 section.list-item-container {
   border-bottom: 1px solid #FFFFFF;
 }
+
 section.profile_tobevoted {
   border-bottom: 1px solid #7C7C7C;
   align-items: center;
@@ -121,6 +141,7 @@ section.profile_tobevoted {
   width: 45%;
   margin-bottom: 30px;
 }
+
 .profile_voting_information {
   color: #FFFFFF;
   height: auto;
