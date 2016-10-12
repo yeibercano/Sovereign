@@ -1,21 +1,15 @@
-section.voting_page_container {
-  height: 780px;
-}
 section.parent_voting_container {
   border-top: 1px solid #316DAA;
   display: flex;
   flex-direction: column;
 }
+
 section.voting_container{
-  /*height: 550px;
-  width: 1160px;
-  overflow: scroll;
-  position: relative;
-  margin: 50px auto;*/
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
 section.voting_container h4 {
   color: $white;
   /*border-bottom: 1px solid #242632;*/
@@ -24,6 +18,7 @@ section.voting_container h4 {
   text-align: center;
   padding: 20px; 
 }
+
 section.vote_contain {
   width: 35%;
 }

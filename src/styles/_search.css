@@ -4,10 +4,12 @@
   text-align: center;
   right: 50px;
 }
+
 .search_button {
   background-color: $mainColor;
   border: $mainColor;
 }
+
 .inputSearch {
   border-radius: 5px;
   position: absolute;
@@ -21,6 +23,7 @@
   color: $white;
   margin-right: 5px;
 }
+
 #search_button_img {
   position: absolute;
   top: 20px;
@@ -28,6 +31,7 @@
   width: 20px;
   right: 10px;
 }
+
 .search_not_found {
   color: $white;
   text-align: center;
