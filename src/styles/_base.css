@@ -94,7 +94,14 @@ img {
 .loadingAnimation {
   margin-top: 15%;
 }
+
 .loadingTitle {
   color: $white;
   padding-top: 3em;
+}
+
+/* LOGIN */
+.userLogin {
+  margin-right: 25px;
+  margin-left: 15px;
 }
