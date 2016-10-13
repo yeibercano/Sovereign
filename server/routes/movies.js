@@ -6,7 +6,7 @@ var db = new neo4j.GraphDatabase(secret.grapheneDB_URI);
 var fs = require('fs');
 var multiparty = require('connect-multiparty'),
     mulitpartyMiddleware = multiparty();
-var jwt    = require('jsonwebtoken')
+var jwt = require('jsonwebtoken');
 
 /* LOADS 5 movies */
 router.get('/', function(req, res, next) {
@@ -18,9 +18,9 @@ router.get('/', function(req, res, next) {
   db.cypher({
     query: query
   },
-    function(err, movies){
-      if (err) throw err;
-      res.status(200).send(movies);
+  function(err, movies){
+    if (err) throw err;
+    res.status(200).send(movies);
   });
 });
 
