@@ -48,7 +48,3 @@ From within the root directory:
 ```sh
 npm install
 ```
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
