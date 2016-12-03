@@ -6,9 +6,9 @@
 
 ## Team
 
-  - __Product Owner__: Yeiber Cano
-  - __Scrum Master__: Aralya Phinith
-  - __Development Team Members__: Yeiber Cano, Aralya Phinith, Dion Fulwood
+  - __Product Owner__: [Yeiber Cano](https://github.com/yeibercano)
+  - __Scrum Master__: [Aralya Phinith](https://github.com/Aphinith)
+  - __Development Team Members__: [Yeiber Cano](https://github.com/yeibercano), [Aralya Phinith](https://github.com/Aphinith), [Dion Fulwood](https://github.com/LmtDNE)
 
 ## Table of Contents
 
